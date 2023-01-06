@@ -15,4 +15,5 @@ public class Collegamento {
         public int getCosto(){
             return costo;
         }
+        //commento prova push
 }
