@@ -59,12 +59,12 @@ public class Settore {
         }
         return pianetaMostRegali;
     }
-    //4)Metodo che restituisce il nome del pianeta col costo più alto di regali richiesti
+    /*4)Metodo che restituisce il nome del pianeta col costo più alto di regali richiesti
     public String getPianetaMostCosto(){
         String pianetaMostCosto = "";
         int maxCosto = 0;
         //devo ancora implementare la classe per calcolare il costo.
-    }
+    }*/
     //volendo questi metodi sarebbero potuti essere implementati in altre classi. Per implementarli nella classe settore è importante ricordarsi di passare nei parametri dei metodi "Settore"
     //5)Metodo che restituisce il nome della città col numero massimo di regali richiesti
     public String getCittaMostRegali(){

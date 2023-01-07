@@ -3,9 +3,9 @@ package progetto;
 public class Regalo {
     private String nomeRegalo;
     private double costoRegalo;
-    private TipoRegalo tipoRegalo;
+    private String[] tipoRegalo = {"Arte", "Elettronica", "Sport"};
     //Costruttore
-    public Regalo(String nomeRegalo, double costoRegalo, TipoRegalo tipoRegalo) {
+    public Regalo(String nomeRegalo, double costoRegalo, String[] tipoRegalo) {
         this.nomeRegalo = nomeRegalo;
         this.costoRegalo = costoRegalo;
         this.tipoRegalo = tipoRegalo;
