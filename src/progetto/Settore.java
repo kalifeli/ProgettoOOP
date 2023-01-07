@@ -63,7 +63,7 @@ public class Settore {
     public String getPianetaMostCosto(){
         String pianetaMostCosto = "";
         int maxCosto = 0;
-        //devo ancora implementare la classe per calcolare il costo
+        //devo ancora implementare la classe per calcolare il costo.
     }
     //volendo questi metodi sarebbero potuti essere implementati in altre classi. Per implementarli nella classe settore è importante ricordarsi di passare nei parametri dei metodi "Settore"
     //5)Metodo che restituisce il nome della città col numero massimo di regali richiesti
