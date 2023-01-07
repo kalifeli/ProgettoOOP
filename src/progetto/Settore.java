@@ -32,9 +32,9 @@ public class Settore {
         return pianeti;
     }
     //Metodo per trovare i regali totali
-    public int getRegaliTotali(Settore settore){
+    public int getRegaliTotali(){
         int numeroRegaliTotali = 0;
-        for (Pianeta pianeta : settore.getPianeti()){
+        for (Pianeta pianeta : getPianeti()){
             for (Citta citta : pianeta.getLecitta()){
                 numeroRegaliTotali += citta.getRegali().size();
             }
@@ -46,10 +46,10 @@ public class Settore {
     //2)Metodo numero regali totali richiesti per ogni tipologia (salto per il momento)
 
     //3)Metodo che trova il nome del pianeta col numero massimo di regali richiesti
-    public String getPianetaMostRegali(Settore settore){
+    public String getPianetaMostRegali(){
         int maxRegali = 0;
         String pianetaMostRegali = "";
-        for (Pianeta pianeta : settore.getPianeti()) {
+        for (Pianeta pianeta : getPianeti()) {
             int numeroRegali = pianeta.getRegaliTotali(); //sono i totali o i richiesti? CAREFUL Luca
 
             if (numeroRegaliTotali > maxRegali) {
@@ -60,17 +60,17 @@ public class Settore {
         return pianetaMostRegali;
     }
     //4)Metodo che restituisce il nome del pianeta col costo più alto di regali richiesti
-    public String getPianetaMostCosto(Settore settore){
+    public String getPianetaMostCosto(){
         String pianetaMostCosto = "";
         int maxCosto = 0;
         //devo ancora implementare la classe per calcolare il costo
     }
     //volendo questi metodi sarebbero potuti essere implementati in altre classi. Per implementarli nella classe settore è importante ricordarsi di passare nei parametri dei metodi "Settore"
     //5)Metodo che restituisce il nome della città col numero massimo di regali richiesti
-    public String getCittaMostRegali(Settore settore){
+    public String getCittaMostRegali(){
         String cittaMostRegali = "";
         int maxRegali = 0;
-        for (Pianeta pianeta : settore.getPianeti()){
+        for (Pianeta pianeta : getPianeti()){
             for (Citta citta : pianeta.getLecitta()){
                 int regali = citta.getRegali().size();
                 if (regali > maxRegali) {
@@ -81,10 +81,10 @@ public class Settore {
         return cittaMostRegali;
     }
     //6)Metodo che restituisce il nome della cittadina contenente più case
-    public String getCittadinaMostCase(Settore settore){
+    public String getCittadinaMostCase(){
         String cittadinaMostcase = "";
         int maxCase = 0;
-        for (Pianeta pianeta : settore.getPianeti()){
+        for (Pianeta pianeta : getPianeti()){
             for (Citta citta : pianeta.getLecitta()){
                 if (citta.isCittadina() && citta.getNumeroCase() > maxCase) {
                     cittadinaMostcase = String.valueOf(citta); //compilatore mi ha detto di wrappare
@@ -95,10 +95,10 @@ public class Settore {
         return cittadinaMostcase;
     }
     //7)Metodo che restituisce il nome della cittadina con più collegamenti
-    public String getCittadinaMostCollegamenti(Settore settore){
+    public String getCittadinaMostCollegamenti(){
         String cittadinaMostCollegamenti = "";
         int maxCollegamenti = 0;
-        for (Pianeta pianeta : settore.getPianeti()){
+        for (Pianeta pianeta : getPianeti()){
             for (Citta citta : pianeta.getLecitta()){
                 if (citta.getCollegamenti().size() > maxCollegamenti){
                     cittadinaMostCollegamenti = String.valueOf(citta); //compilatore mi ha detto di wrappare
