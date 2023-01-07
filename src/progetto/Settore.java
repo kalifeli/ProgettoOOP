@@ -1,16 +1,16 @@
 package progetto;
 
-import java.util.List;
+import java.util.ArrayList;
 import java.util.Set;
 
 public class Settore {
     int deposito;
-    private List<Pianeta> pianeti;
+    private ArrayList<Pianeta> pianeti;
     private int numeroRegaliTotali;
     private Set<String> regaliDistinti; //(salto per ora perché non so come implementarlo)
 
     //Costruttore:
-    public Settore(int deposito, List<Pianeta> pianeti,int numeroRegaliTotali, Set<String> regaliDistinti){
+    public Settore(int deposito, ArrayList<Pianeta> pianeti,int numeroRegaliTotali, Set<String> regaliDistinti){
         this.deposito = deposito;
         this.pianeti = pianeti;
         this.numeroRegaliTotali = numeroRegaliTotali;
@@ -28,7 +28,7 @@ public class Settore {
     public void setDeposito(int deposito){
         this.deposito = deposito;
     }
-    public List<Pianeta> getPianeti(){
+    public ArrayList<Pianeta> getPianeti(){
         return pianeti;
     }
     //Metodo per trovare i regali totali

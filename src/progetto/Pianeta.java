@@ -2,15 +2,15 @@ package progetto;
 
 import java.util.List;
 import java.util.Set;
-
+import java.util.ArrayList;
 public class Pianeta {
     private String nomePianeta;
-    private List<Citta> lecitta; /*citta o leCitta?*/
+    private ArrayList<Citta> lecitta; /*citta o leCitta?*/
     private int regaliTotali; //sono i totali o i richiesti?
     private int regaliDistinti; //questi sono complicati, devo vedere meglio
 
     //Costruttore:
-    public Pianeta(String nomePianeta, List<Citta> lecitta, int regaliTotali /*regali distinti?*/){
+    public Pianeta(String nomePianeta, ArrayList<Citta> lecitta, int regaliTotali /*regali distinti?*/){
         this.nomePianeta = nomePianeta;
         this.lecitta = lecitta;
         this.regaliTotali = regaliTotali;
@@ -24,7 +24,7 @@ public class Pianeta {
     public int getRegaliTotali(){
         return regaliTotali;
     }
-    public List<Citta> getLecitta(){
+    public ArrayList<Citta> getLecitta(){
         return lecitta;
     }
 

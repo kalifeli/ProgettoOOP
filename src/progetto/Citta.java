@@ -1,13 +1,12 @@
 package progetto;
 import java.util.ArrayList;
-import java.util.List;
 public class Citta {
     private String nomeCitta;
     private int numeroCase;
-    private List<Collegamento> collegamenti;
-    private List<Regalo> regali;
+    private ArrayList<Collegamento> collegamenti;
+    private ArrayList<Regalo> regali;
     //Costruttore
-    public Citta (String nomeCitta, int numeroCase, List<Collegamento> collegamenti, List<Regalo> regali){
+    public Citta (String nomeCitta, int numeroCase, ArrayList<Collegamento> collegamenti, ArrayList<Regalo> regali){
         this.nomeCitta = nomeCitta;
         this.numeroCase = numeroCase;
         this.collegamenti = collegamenti; /*??? why new?*/
@@ -20,7 +19,7 @@ public class Citta {
     public void setNomeCitta(String nomeCitta){
         this.nomeCitta = nomeCitta;
     }
-    public List<Collegamento> getCollegamenti(){
+    public ArrayList<Collegamento> getCollegamenti(){
         return collegamenti;
     }
     //metodo per aggiungere un collegamento bidirezionale
@@ -34,10 +33,10 @@ public class Citta {
     public void setNumeroCase(int numeroCase){
         this.numeroCase = numeroCase;
     }
-    public List<Regalo> getRegali(){
+    public ArrayList<Regalo> getRegali(){
         return regali;
     }
-    public void setRegali(List<Regalo> regali){
+    public void setRegali(ArrayList<Regalo> regali){
         this.regali = regali;
     }
     //Metodi per categorizzare le città;
