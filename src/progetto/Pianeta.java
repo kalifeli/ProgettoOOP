@@ -9,11 +9,9 @@ public class Pianeta {
     /**
      * Costruttore della classe Pianeta che è descritto univocamente da un nome e da il numero dei regali totali
      * @param nomePianeta nome univoco per il pianeta
-     * @param regali regali totali per questo pianeta
      */
-    public Pianeta(String nomePianeta, int regali){
+    public Pianeta(String nomePianeta){
         this.nomePianeta = nomePianeta;
-        this.regaliTotali = regali;
         this.listaCitta = new ArrayList<>();
     }
     public String getNomePianeta(){
@@ -24,5 +22,12 @@ public class Pianeta {
     }
     public ArrayList<Citta> getListaCitta(){
         return listaCitta;
+    }
+    public double getCostoRegaliPianeta(){
+        double sum = 0;
+        for(Citta citta : getListaCitta())
+            sum += citta.getCostoRegali();
+
+        return sum;
     }
 }

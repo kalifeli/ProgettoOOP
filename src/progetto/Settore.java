@@ -2,7 +2,6 @@ package progetto;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Set;
 
 public class Settore {
     private int deposito;
@@ -43,18 +42,37 @@ public class Settore {
      * @return un intero che indica il numero dei regali distinti
      */
     public int getRegaliDistinti(){
-        HashMap<Regalo,Integer> contatoreRegali = new HashMap<>();
-        for(Pianeta pianeta : listaPianeti)
+        HashMap<String,Integer> contatoreRegali = new HashMap<>();
+        for(Pianeta pianeta : getListaPianeti())
             for(Citta c : pianeta.getListaCitta())
                 for(Regalo regalo : c.getListaRegali())
                 {
-                    int contatore = contatoreRegali.getOrDefault(regalo,0);
-                    contatoreRegali.put(regalo,contatore + 1);
+                    String nomeRegalo = regalo.getNomeRegalo();
+                    int contatore = contatoreRegali.getOrDefault(nomeRegalo,0);
+                    contatoreRegali.put(nomeRegalo,contatore + 1);
                 }
         return contatoreRegali.size();
     }
 
-    //2)Metodo numero regali totali richiesti per ogni tipologia (salto per il momento)
+    /**
+     * Task 1) 2. Metodo che stampa il numero dei regali, di un settore, di ogni tipologia
+     */
+    public void getRegaliTotaliPerTipologia(){
+        HashMap<String,Integer> contatoreTipologie = new HashMap<>();
+        for(Pianeta pianeta : getListaPianeti())
+            for(Citta c : pianeta.getListaCitta())
+                for(Regalo regalo : c.getListaRegali())
+                {
+                    String tipo = regalo.getTipoRegalo();
+                    int contatore = contatoreTipologie.getOrDefault(tipo,0);
+                    contatoreTipologie.put(tipo, contatore + 1);
+                }
+        int regaliDiArte = contatoreTipologie.getOrDefault("arte", 0);
+        int regaliDiElettronica = contatoreTipologie.getOrDefault("elettronica", 0);
+        int regaliDiSport = contatoreTipologie.getOrDefault("sport",0);
+
+        System.out.println(regaliDiArte + " " + regaliDiElettronica + " " + regaliDiSport);
+    }
 
 
     /**
@@ -73,13 +91,24 @@ public class Settore {
         }
         return pianetaMostRegali;
     }
-    /*4)Metodo che restituisce il nome del pianeta col costo più alto di regali richiesti
-    public String getPianetaMostCosto(){
+    /**
+     * Task 1) 4.Metodo che restituisce il nome del pianeta che presenta costo maggiore di regali richiesti
+     */
+    public String getPianetaMostCosto() {
         String pianetaMostCosto = "";
-        int maxCosto = 0;
-        //devo ancora implementare la classe per calcolare il costo.
-    }*/
-    //volendo questi metodi sarebbero potuti essere implementati in altre classi. Per implementarli nella classe settore è importante ricordarsi di passare nei parametri dei metodi "Settore"
+        // inizializzo la variabile che conterrà il costo massimo dei regali richiesti in un pianeta
+        double costoMax = getListaPianeti().get(0).getCostoRegaliPianeta();
+        for(int i = 1; i < getListaPianeti().size(); ++i )
+        {
+            double costoRegaliPianeta = getListaPianeti().get(i).getCostoRegaliPianeta();
+            if(costoRegaliPianeta > costoMax) {
+                costoMax = costoRegaliPianeta;
+                pianetaMostCosto = getListaPianeti().get(i).getNomePianeta();
+            }
+        }
+        return pianetaMostCosto;
+
+    }
 
     /**
      * Task 1) 5.Metodo che restituisce il nome della città col numero massimo di regali richiesti
@@ -92,7 +121,8 @@ public class Settore {
             for (Citta citta : pianeta.getListaCitta()){
                 int regali = citta.getListaRegali().size();
                 if (regali > maxRegali) {
-                    cittaMostRegali = String.valueOf(citta); //il compilatore mi ha detto di wrapparlo. Questo punto lo devo capire meglio
+                    //cittaMostRegali = String.valueOf(citta); //il compilatore mi ha detto di wrapparlo. Questo punto lo devo capire meglio
+                    cittaMostRegali = citta.getNomeCitta();
                 }
             }
         }
@@ -109,7 +139,7 @@ public class Settore {
         for (Pianeta pianeta : getListaPianeti()){
             for (Citta citta : pianeta.getListaCitta()){
                 if (!citta.isPaesino() && citta.getNumeroCase() > maxCase) {
-                    cittadinaMostcase = String.valueOf(citta); //compilatore mi ha detto di wrappare
+                    //cittadinaMostcase = String.valueOf(citta); //compilatore mi ha detto di wrappare
                     maxCase = citta.getNumeroCase();
                 }
             }
@@ -130,10 +160,6 @@ public class Settore {
         return cittadinaMostCollegamenti;
     }
 
-    //Mancano alcuni metodi della task 1. La task 2 non è stata minimamente toccata.
-    //Ancora devo realizzare un metodo per calcolare il costo dei regali per ogni pianeta
-    //Ancora non ho realizzato il metodo per trovare il numero di regali totali richiesti per ogni tipologia
-
     /**
      * Stampa Yes se la condizione è soddisfatta altrimenti NO
      */
@@ -144,19 +170,27 @@ public class Settore {
             System.out.println("NO");
     }
 
+    /**
+     * Metodo booleano che restituisce TRUE se il numero totale di regali
+     * richiesti in ogni città è almeno p e al più q, altrimenti FALSE
+     * @param p
+     * @param q
+     * @return
+     */
+
     public boolean task2_1(int p, int q){
-        boolean valid = true; // dichiaro e inizializzo una variabile booleana
+        boolean valid = false; // dichiaro e inizializzo una variabile booleana
         // itero su tutti i pianeti
         for(Pianeta pianeta : getListaPianeti())
             // itero su tutte le citta del pianeta
-            for(Citta c : pianeta.getListaCitta()) {
-                if(valid = false)
-                    return valid;
-                // controlla il numero delle caso con gli indici presi in input
-                if (c.getNumeroCase() >= p && c.getNumeroCase() <= q)
+            for(Citta citta : pianeta.getListaCitta()) {
+                int numeroRegali = citta.getListaRegali().size();
+                if((numeroRegali >= p) && (numeroRegali <= q)) {
                     valid = true;
-                else
-                    valid = false;
+                }
+                else {
+                    return false;
+                }
             }
         return valid;
     }
