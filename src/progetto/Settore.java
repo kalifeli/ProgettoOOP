@@ -43,9 +43,9 @@ public class Settore {
      */
     public int getRegaliDistinti(){
         HashMap<String,Integer> contatoreRegali = new HashMap<>();
-        for(Pianeta pianeta : getListaPianeti())
-            for(Citta c : pianeta.getListaCitta())
-                for(Regalo regalo : c.getListaRegali())
+        for(Pianeta pianeta : listaPianeti)
+            for(Citta citta : pianeta.getListaCitta())
+                for(Regalo regalo : citta.getListaRegali())
                 {
                     String nomeRegalo = regalo.getNomeRegalo();
                     int contatore = contatoreRegali.getOrDefault(nomeRegalo,0);
@@ -82,9 +82,14 @@ public class Settore {
     public String getPianetaMostRegali(){
         int maxRegali = 0;
         String pianetaMostRegali = "";
+
         for (Pianeta pianeta : getListaPianeti()) {
-            int numeroRegali = pianeta.getRegaliTotali();
-            if (numeroRegali > maxRegali) {
+            int numeroRegali = 0;
+            for(Citta citta : pianeta.getListaCitta())
+            {
+                numeroRegali += citta.getListaRegali().size();
+            }
+            if(numeroRegali > maxRegali){
                 maxRegali = numeroRegali;
                 pianetaMostRegali = pianeta.getNomePianeta();
             }
@@ -97,13 +102,21 @@ public class Settore {
     public String getPianetaMostCosto() {
         String pianetaMostCosto = "";
         // inizializzo la variabile che conterrà il costo massimo dei regali richiesti in un pianeta
-        double costoMax = getListaPianeti().get(0).getCostoRegaliPianeta();
-        for(int i = 1; i < getListaPianeti().size(); ++i )
+        double costoMax = 0;
+        for(Pianeta pianeta : getListaPianeti())
         {
-            double costoRegaliPianeta = getListaPianeti().get(i).getCostoRegaliPianeta();
-            if(costoRegaliPianeta > costoMax) {
-                costoMax = costoRegaliPianeta;
-                pianetaMostCosto = getListaPianeti().get(i).getNomePianeta();
+            double costo = 0;
+            for(Citta citta : pianeta.getListaCitta())
+            {
+                for(Regalo regalo : citta.getListaRegali())
+                {
+                    costo += regalo.getCostoRegalo();
+                }
+            }
+            if(costo > costoMax)
+            {
+                costoMax = costo;
+                pianetaMostCosto = pianeta.getNomePianeta();
             }
         }
         return pianetaMostCosto;
@@ -119,9 +132,10 @@ public class Settore {
         int maxRegali = 0;
         for (Pianeta pianeta : getListaPianeti()){
             for (Citta citta : pianeta.getListaCitta()){
-                int regali = citta.getListaRegali().size();
-                if (regali > maxRegali) {
-                    //cittaMostRegali = String.valueOf(citta); //il compilatore mi ha detto di wrapparlo. Questo punto lo devo capire meglio
+                int regaliRichiesti = citta.getListaRegali().size();
+                if(regaliRichiesti > maxRegali)
+                {
+                    maxRegali = regaliRichiesti;
                     cittaMostRegali = citta.getNomeCitta();
                 }
             }
@@ -139,25 +153,32 @@ public class Settore {
         for (Pianeta pianeta : getListaPianeti()){
             for (Citta citta : pianeta.getListaCitta()){
                 if (!citta.isPaesino() && citta.getNumeroCase() > maxCase) {
-                    //cittadinaMostcase = String.valueOf(citta); //compilatore mi ha detto di wrappare
                     maxCase = citta.getNumeroCase();
+                    cittadinaMostcase = citta.getNomeCitta();
                 }
             }
         }
         return cittadinaMostcase;
     }
-    //7)Metodo che restituisce il nome della cittadina con più collegamenti
-    public String getCittadinaMostCollegamenti(){
-        String cittadinaMostCollegamenti = "";
+
+    /**
+     * Metodo che restituisce il nome della cittadina con più collegamenti
+     * @return citta che ha più collegamenti con altre città
+     */
+
+    public String getCittaMostCollegamenti(){
         int maxCollegamenti = 0;
+        String cittaMostCollegamenti = "";
         for (Pianeta pianeta : getListaPianeti()){
             for (Citta citta : pianeta.getListaCitta()){
-                if (citta.getListaCollegamenti().size() > maxCollegamenti){
-                    cittadinaMostCollegamenti = String.valueOf(citta); //compilatore mi ha detto di wrappare
+                int contatoreCollegamento = citta.getListaCollegamenti().size();
+                if (contatoreCollegamento > maxCollegamenti){
+                    maxCollegamenti = contatoreCollegamento;
+                    cittaMostCollegamenti = citta.getNomeCitta();
                 }
             }
         }
-        return cittadinaMostCollegamenti;
+        return cittaMostCollegamenti;
     }
 
     /**
