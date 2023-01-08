@@ -52,11 +52,8 @@ public class Citta {
     public void addRegalo(Regalo regalo) {listaRegali.add(regalo);}
 
     //metodo per aggiungere un collegamento bidirezionale
-    public void addCollegamento(Citta citta, int costo) {
-        // aggiungi un collegamento alla lista dei collegamenti
-        listaCollegamenti.add(new Collegamento(citta, costo)); /*BIDIREZIONALITà*/
-        // ti riferisci alla lista dei collegamenti della citta aggiungendo un collegamento
-        citta.listaCollegamenti.add(new Collegamento(this, costo)); /*BIDIREZIONALITà*/
+    public void addCollegamento(Collegamento collegamento) {
+        listaCollegamenti.add(collegamento);
     }
     public ArrayList<Collegamento> getListaCollegamenti() {return listaCollegamenti;}
 
