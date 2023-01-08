@@ -1,19 +1,21 @@
 package progetto;
 
 public class Collegamento {
-        private Citta destinazione;
-        private int tempo;
+    private Citta citta1;
+    private Citta citta2;
+    private int tempo;
 
-        public Collegamento(Citta destinazione, int tempo) {
-            this.destinazione = destinazione;
-            this.tempo = tempo;
+    public Collegamento(Citta citta1,Citta citta2, int tempo) {
+        this.citta1 = citta1;
+        this.citta2 = citta2;
+        this.tempo = tempo;
+    }
+    public Citta getCitta1(){return citta1;}
+    public Citta getCitta2() {
+            return citta2;
         }
-
-        public Citta getDestinazione() {
-            return destinazione;
-        }
-
-        public int getTempo() {
-            return tempo;
-        }
+    public int getTempo() {
+        return tempo;
+    }
 }
+
