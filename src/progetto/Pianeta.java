@@ -1,33 +1,28 @@
 package progetto;
 
-import java.util.List;
-import java.util.Set;
 import java.util.ArrayList;
 public class Pianeta {
     private String nomePianeta;
-    private ArrayList<Citta> lecitta; /*citta o leCitta?*/
-    private int regaliTotali; //sono i totali o i richiesti?
-    private int regaliDistinti; //questi sono complicati, devo vedere meglio
+    private int regaliTotali; // regali del pianeta
+    private ArrayList<Citta> listaCitta; /*citta o leCitta?*/
 
-    //Costruttore:
-    public Pianeta(String nomePianeta, ArrayList<Citta> lecitta, int regaliTotali /*regali distinti?*/){
+    /**
+     * Costruttore della classe Pianeta che è descritto univocamente da un nome e da il numero dei regali totali
+     * @param nomePianeta nome univoco per il pianeta
+     * @param regali regali totali per questo pianeta
+     */
+    public Pianeta(String nomePianeta, int regali){
         this.nomePianeta = nomePianeta;
-        this.lecitta = lecitta;
-        this.regaliTotali = regaliTotali;
+        this.regaliTotali = regali;
+        this.listaCitta = new ArrayList<>();
     }
     public String getNomePianeta(){
         return nomePianeta;
     }
-    public void setNomePianeta(String nomePianeta){
-        this.nomePianeta = nomePianeta;
-    }
     public int getRegaliTotali(){
         return regaliTotali;
     }
-    public ArrayList<Citta> getLecitta(){
-        return lecitta;
+    public ArrayList<Citta> getListaCitta(){
+        return listaCitta;
     }
-
-
-    //Ancora da rivedere
 }

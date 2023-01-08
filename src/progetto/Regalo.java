@@ -19,6 +19,4 @@ public class Regalo {
         return costoRegalo;
     }
     public void setCostoRegalo(double costoRegalo){this.costoRegalo = costoRegalo;}
-    //metodo setter per tipoRegalo?
-
 }

@@ -1,19 +1,19 @@
 package progetto;
 
 public class Collegamento {
-        private Citta citta;
-        private int costo;
-        //Costruttore
-        public Collegamento(Citta citta, int costo){
-            this.citta = citta;
-            this.costo = costo;
+        private Citta destinazione;
+        private int tempo;
+
+        public Collegamento(Citta destinazione, int tempo) {
+            this.destinazione = destinazione;
+            this.tempo = tempo;
         }
-        //Metodi getter e setter
-        public Citta getCitta (){
-            return citta;
+
+        public Citta getDestinazione() {
+            return destinazione;
         }
-        public int getCosto(){
-            return costo;
+
+        public int getTempo() {
+            return tempo;
         }
-        //commento prova push
 }
