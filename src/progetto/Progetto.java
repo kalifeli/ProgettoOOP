@@ -27,6 +27,7 @@ public class Progetto {
         Pianeta p2 = new Pianeta("p2"); // ha 1 città
 
 
+
         /*
         c1 p1 1 c2#2,c3#8
         c2 p1 2 c1#2,c3#4,c4#12
@@ -72,10 +73,52 @@ public class Progetto {
         c5.addRegalo(r4);
 
         Settore s1 = new Settore(100);
+        s1.addPianeta(p1);
+        s1.addPianeta(p2);
 
-        System.out.println(s1.getRegaliTotali() + " " + s1.getRegaliDistinti());
-        s1.getRegaliTotaliPerTipologia();
-        System.out.println(s1.getPianetaMostRegali());
-        System.out.println(s1.getPianetaMostCosto());
+        //COLLEGAMENTI
+        Collegamento collegamento1 = new Collegamento(c1,c2,2);
+        c1.addCollegamento(collegamento1);
+
+        Collegamento collegamento2 = new Collegamento(c1,c3,8);
+        c1.addCollegamento(collegamento2);
+
+        c2.addCollegamento(new Collegamento(c2,c1,2));
+        c2.addCollegamento(new Collegamento(c2,c3,4));
+        c2.addCollegamento(new Collegamento(c2,c4,12));
+
+        c3.addCollegamento(new Collegamento(c3,c1,8));
+        c3.addCollegamento(new Collegamento(c3,c2,4));
+        c3.addCollegamento(new Collegamento(c3,c4,3));
+
+        c4.addCollegamento(new Collegamento(c4,c2,12));
+        c4.addCollegamento(new Collegamento(c4,c3,3));
+
+        //TASK 1 (sono riportati i risultati affianco ad ogni stampa)
+        System.out.println(s1.getRegaliTotali() + " " + s1.getRegaliDistinti()); // 12 4
+        s1.getRegaliTotaliPerTipologia(); // 5 4 3
+        System.out.println(s1.getPianetaMostRegali()); // p1
+        System.out.println(s1.getPianetaMostCosto()); // p1
+        System.out.println(s1.getCittaMostRegali());// c1
+        System.out.println(s1.getCittadinaMostCase());
+        System.out.println(s1.getCittaMostCollegamenti());// c2
+
+
+
+        /*
+        c1 p1 1 c2#2,c3#8
+        c2 p1 2 c1#2,c3#4,c4#12
+        c3 p1 1 c1#8,c2#4,c4#3
+        c4 p1 4 c2#12,c3#3
+        c5 p5 3 -
+         */
+
+
+
+
+
+
+
+
     }
 }
