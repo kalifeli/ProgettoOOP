@@ -1,14 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="eb53f33c-27c3-4b1f-a8a8-f6859cb93e02" name="Changes" comment="Versione 1 progetto">
+    <list default="true" id="eb53f33c-27c3-4b1f-a8a8-f6859cb93e02" name="Changes" comment="Versione 1 progetto soggetta a problemi in vari metodi nella classe settore">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/progetto/Citta.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/progetto/Citta.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/progetto/Lettura_stdin1.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/progetto/Letturastdin.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/progetto/Pianeta.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/progetto/Pianeta.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/progetto/Collegamento.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/progetto/Collegamento.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/progetto/Progetto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/progetto/Progetto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/progetto/Regalo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/progetto/Regalo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/progetto/Settore.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/progetto/Settore.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -73,7 +70,14 @@
       <option name="project" value="LOCAL" />
       <updated>1673173954527</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Versione 1 progetto soggetta a problemi in vari metodi nella classe settore">
+      <created>1673196524773</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1673196524773</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -96,6 +100,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Con questo push ho esclusivamente sostituito Arraylist al posto di List in tutti i punti del codice." />
     <MESSAGE value="Versione 1 progetto" />
-    <option name="LAST_COMMIT_MESSAGE" value="Versione 1 progetto" />
+    <MESSAGE value="Versione 1 progetto soggetta a problemi in vari metodi nella classe settore" />
+    <option name="LAST_COMMIT_MESSAGE" value="Versione 1 progetto soggetta a problemi in vari metodi nella classe settore" />
   </component>
 </project>
