@@ -58,20 +58,16 @@ public class Citta {
     public ArrayList<Collegamento> getListaCollegamenti() {return listaCollegamenti;}
 
     /**
-     * Trova il costo totale dei regali richiesti in una città
+     * Trova il costo totale dei collegamenti in una città
      * @return un double rappresentante il costo totale dei regali richiesti dalla citta
      */
-    public double getCostoRegali(){
-        // inizializzare il costo massimo con il primo regalo richiesto nella citta
-        double costoMax = listaRegali.get(0).getCostoRegalo();
-        //itero per ogni regalo della citta
-        for(int i = 1; i < listaRegali.size(); ++i)
+    public double getCostoCollegamentiCitta(){
+        double costo = 0;
+        for(Collegamento collegamento : getListaCollegamenti())
         {
-            double costoRegalo= listaRegali.get(i).getCostoRegalo();
-            if(costoRegalo > costoMax)
-                costoMax = costoRegalo;
+            costo += collegamento.getTempo();
         }
-        return costoMax;
+        return costo;
     }
 }
 
