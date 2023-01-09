@@ -1,13 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="eb53f33c-27c3-4b1f-a8a8-f6859cb93e02" name="Changes" comment="Correzione dei metodi della task 1">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/progetto/Citta.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/progetto/Citta.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/progetto/Pianeta.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/progetto/Pianeta.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/progetto/Progetto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/progetto/Progetto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/progetto/Settore.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/progetto/Settore.java" afterDir="false" />
-    </list>
+    <list default="true" id="eb53f33c-27c3-4b1f-a8a8-f6859cb93e02" name="Changes" comment="Aggiunta di un commento per ricordare di aggiungere per gli esercizi dal 2 al 7 della task 1 una verifica.&#10;Ho sistemato il metodo task2_1 e aggiunto il metodo task2_2" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -112,7 +106,35 @@
       <option name="project" value="LOCAL" />
       <updated>1673217893560</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Aggiunta del metodo getCostoCollegamentiCitta">
+      <created>1673278486234</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1673278486234</updated>
+    </task>
+    <task id="LOCAL-00010" summary="eliminato metodo inutile">
+      <created>1673278539664</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1673278539664</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Provato task2_1 e task_2, sembrano funzionare ma dovrei riprovarle con nuovi esempio per essere sicuro">
+      <created>1673278590148</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1673278590148</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Aggiunta di un commento per ricordare di aggiungere per gli esercizi dal 2 al 7 della task 1 una verifica.&#10;Ho sistemato il metodo task2_1 e aggiunto il metodo task2_2">
+      <created>1673278691942</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1673278691942</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -140,6 +162,10 @@
     <MESSAGE value="Versione 2 del progetto che presenta la task 1 completata e corretta" />
     <MESSAGE value="La modifica della classe Collegamento riguarda l'aggiunta di una Citta di partenza e di una Citta di arrivo con i rispettivi metodi getter" />
     <MESSAGE value="Correzione dei metodi della task 1" />
-    <option name="LAST_COMMIT_MESSAGE" value="Correzione dei metodi della task 1" />
+    <MESSAGE value="Aggiunta del metodo getCostoCollegamentiCitta" />
+    <MESSAGE value="eliminato metodo inutile" />
+    <MESSAGE value="Provato task2_1 e task_2, sembrano funzionare ma dovrei riprovarle con nuovi esempio per essere sicuro" />
+    <MESSAGE value="Aggiunta di un commento per ricordare di aggiungere per gli esercizi dal 2 al 7 della task 1 una verifica.&#10;Ho sistemato il metodo task2_1 e aggiunto il metodo task2_2" />
+    <option name="LAST_COMMIT_MESSAGE" value="Aggiunta di un commento per ricordare di aggiungere per gli esercizi dal 2 al 7 della task 1 una verifica.&#10;Ho sistemato il metodo task2_1 e aggiunto il metodo task2_2" />
   </component>
 </project>
