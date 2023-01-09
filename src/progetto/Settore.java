@@ -21,7 +21,7 @@ public class Settore {
     public ArrayList<Pianeta> getListaPianeti(){
         return listaPianeti;
     }
-    //Metodo per trovare i regali totali
+    // TASK 1
 
     /**
      * Task 1) 1.Itera ogni pianeta e ogni città accedendo alla variabile esemplare regaliTotali
@@ -53,6 +53,11 @@ public class Settore {
                 }
         return contatoreRegali.size();
     }
+    /**
+     * Per i quesiti da 2 a 7, nel caso in cui vi siano più nomi validi (es, due pianeti con lo stesso numero
+     * massimo), restituire il primo in ordine lessicografico crescente. La risposta ad ogni quesito sta su di
+     * una singola riga. Se non vi è una risposta per un quesito, stampare una riga vuota.
+     */
 
     /**
      * Task 1) 2. Metodo che stampa il numero dei regali, di un settore, di ogni tipologia
@@ -180,6 +185,7 @@ public class Settore {
         }
         return cittaMostCollegamenti;
     }
+    //TASK 2
 
     /**
      * Stampa Yes se la condizione è soddisfatta altrimenti NO
@@ -194,19 +200,18 @@ public class Settore {
     /**
      * Metodo booleano che restituisce TRUE se il numero totale di regali
      * richiesti in ogni città è almeno p e al più q, altrimenti FALSE
-     * @param p
-     * @param q
-     * @return
+     * @param p minimo di regali richiesti in ogni citta
+     * @param q massimo di regali richiesti in ogni citta
+     * @return true se il numero dei regali richiesti in ogni città è almeno p e al più q, altrimenti false
      */
-
     public boolean task2_1(int p, int q){
         boolean valid = false; // dichiaro e inizializzo una variabile booleana
         // itero su tutti i pianeti
         for(Pianeta pianeta : getListaPianeti())
             // itero su tutte le citta del pianeta
             for(Citta citta : pianeta.getListaCitta()) {
-                int numeroRegali = citta.getListaRegali().size();
-                if((numeroRegali >= p) && (numeroRegali <= q)) {
+                int numeroRegaliRichiesti = citta.getListaRegali().size();
+                if((numeroRegaliRichiesti >= p) && (numeroRegaliRichiesti <= q)) {
                     valid = true;
                 }
                 else {
@@ -215,6 +220,66 @@ public class Settore {
             }
         return valid;
     }
+
+
+
+
+    /**
+     * Calcola il costo massimo dei collegamenti di una città in ogni pianeta verificando, tramite un contatore, se il
+     * il costo massimo di collegamenti è uguale anche a quello di altre città nel pianeta
+     * @return true se vi è una sola città la cui somma del costo dei suoi collegamenti è il massimo
+     * in quel pianeta, altrimenti false
+     */
+
+    public boolean task2_2(){
+        for(Pianeta pianeta : getListaPianeti()) {
+            double costoMax = 0;
+            for (Citta citta : pianeta.getListaCitta()) {
+                double costo = 0;
+                costo += citta.getCostoCollegamentiCitta();
+                if(costo > costoMax)
+                    costoMax = costo;
+            }
+            int contatore = 0;
+            for(Citta citta : pianeta.getListaCitta()){
+                if(citta.getCostoCollegamentiCitta() == costoMax)
+                    contatore++;
+            }
+            if(contatore > 1)
+            {
+                return false;
+            }
+        }
+        return true;
+    }
+    /**
+     * Metodo booleano che restituisce true se per ogni pianeta non vi sono due città in cui non è stato richiesto almeno un regalo dello
+     * stesso tipo
+     * @return
+     */
+    public boolean task2_4() {
+        for (Pianeta p : getListaPianeti()) {
+            for (int i = 0; i < p.getListaCitta().size(); i++) {
+                for (int j = i + 1; j < p.getListaCitta().size(); j++){
+                    Citta citta1 = p.getListaCitta().get(i);
+                    Citta citta2 = p.getListaCitta().get(j);
+                    for (Regalo regalo1 : citta1.getListaRegali()){
+                        for (Regalo regalo2 : citta2.getListaRegali()){
+                            if (regalo1.getTipoRegalo().equals(regalo2.getTipoRegalo())){
+                                return true;
+                            }
+
+                        }
+                    }
+                }
+            }
+        }
+        return false;
+    }
+
+
+
+
 
 
 

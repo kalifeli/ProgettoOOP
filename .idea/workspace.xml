@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="eb53f33c-27c3-4b1f-a8a8-f6859cb93e02" name="Changes" comment="Versione 1 progetto soggetta a problemi in vari metodi nella classe settore">
+    <list default="true" id="eb53f33c-27c3-4b1f-a8a8-f6859cb93e02" name="Changes" comment="Correzione dei metodi della task 1">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/progetto/Citta.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/progetto/Citta.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/progetto/Collegamento.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/progetto/Collegamento.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/progetto/Pianeta.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/progetto/Pianeta.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/progetto/Progetto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/progetto/Progetto.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/progetto/Settore.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/progetto/Settore.java" afterDir="false" />
     </list>
@@ -77,7 +77,42 @@
       <option name="project" value="LOCAL" />
       <updated>1673196524773</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="modifica apportata al metodo &quot;addCollegamento&quot;, aggiunta di un metodo &quot;getCostoRegali&quot;, forse inutile">
+      <created>1673217672758</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1673217672758</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Versione 2 del progetto che presenta la task 1 completata e corretta">
+      <created>1673217738847</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1673217738847</updated>
+    </task>
+    <task id="LOCAL-00006" summary="La modifica della classe Collegamento riguarda l'aggiunta di una Citta di partenza e di una Citta di arrivo con i rispettivi metodi getter">
+      <created>1673217855634</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1673217855634</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Correzione dei metodi della task 1">
+      <created>1673217883038</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1673217883038</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Correzione dei metodi della task 1">
+      <created>1673217893560</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1673217893560</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -101,6 +136,10 @@
     <MESSAGE value="Con questo push ho esclusivamente sostituito Arraylist al posto di List in tutti i punti del codice." />
     <MESSAGE value="Versione 1 progetto" />
     <MESSAGE value="Versione 1 progetto soggetta a problemi in vari metodi nella classe settore" />
-    <option name="LAST_COMMIT_MESSAGE" value="Versione 1 progetto soggetta a problemi in vari metodi nella classe settore" />
+    <MESSAGE value="modifica apportata al metodo &quot;addCollegamento&quot;, aggiunta di un metodo &quot;getCostoRegali&quot;, forse inutile" />
+    <MESSAGE value="Versione 2 del progetto che presenta la task 1 completata e corretta" />
+    <MESSAGE value="La modifica della classe Collegamento riguarda l'aggiunta di una Citta di partenza e di una Citta di arrivo con i rispettivi metodi getter" />
+    <MESSAGE value="Correzione dei metodi della task 1" />
+    <option name="LAST_COMMIT_MESSAGE" value="Correzione dei metodi della task 1" />
   </component>
 </project>
