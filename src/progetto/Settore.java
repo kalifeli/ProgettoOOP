@@ -216,6 +216,31 @@ public class Settore {
         return valid;
     }
 
+    /**
+     * Metodo booleano che restituisce true se per ogni pianeta non vi sono due città in cui non è stato richiesto almeno un regalo dello
+     * stesso tipo
+     * @return
+     */
+    public boolean task2_4() {
+        for (Pianeta p : getListaPianeti()) {
+            for (int i = 0; i < p.getListaCitta().size(); i++) {
+                for (int j = i + 1; j < p.getListaCitta().size(); j++){
+                    Citta citta1 = p.getListaCitta().get(i);
+                    Citta citta2 = p.getListaCitta().get(j);
+                    for (Regalo regalo1 : citta1.getListaRegali()){
+                        for (Regalo regalo2 : citta2.getListaRegali()){
+                            if (regalo1.getTipoRegalo().equals(regalo2.getTipoRegalo())){
+                                return true;
+                            }
+
+                        }
+                    }
+                }
+            }
+        }
+        return false;
+    }
+
 
 
 }
