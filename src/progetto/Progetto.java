@@ -59,6 +59,7 @@ public class Progetto {
         c1.addRegalo(r2);
         c1.addRegalo(r3);
 
+
         c2.addRegalo(r2);
         c2.addRegalo(r4);
 
@@ -103,13 +104,28 @@ public class Progetto {
         System.out.println(s1.getCittadinaMostCase());
         System.out.println(s1.getCittaMostCollegamenti());// c2
 
+        //TASK 2 (sono riportati i risultati affianco ad ogni stampa)
+        if(s1.task2_1(1,10)) // yes
+            System.out.println("YES");
+        else
+            System.out.println("NO");
+
+        if(s1.task2_2()) // yes
+            System.out.println("YES");
+        else
+            System.out.println("NO");
+
+
+
+
+
 
 
         /*
-        c1 p1 1 c2#2,c3#8
-        c2 p1 2 c1#2,c3#4,c4#12
-        c3 p1 1 c1#8,c2#4,c4#3
-        c4 p1 4 c2#12,c3#3
+        c1 p1 1 c2#2,c3#8 -> 10
+        c2 p1 2 c1#2,c3#4,c4#12 -> 18
+        c3 p1 1 c1#8,c2#4,c4#3 -> 15
+        c4 p1 4 c2#12,c3#3 -> 15
         c5 p5 3 -
          */
 
