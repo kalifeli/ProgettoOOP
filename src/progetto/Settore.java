@@ -5,16 +5,25 @@ import java.util.HashMap;
 
 public class Settore {
     private int deposito;
-    private int numeroRegaliTotali; //?
     private ArrayList<Pianeta> listaPianeti;
 
     //Costruttore:
+    public Settore(){
+        this.deposito = 0;
+        this.listaPianeti = new ArrayList<>();
+    }
     public Settore(int deposito){
         this.deposito = deposito;
         this.listaPianeti = new ArrayList<>();
     }
+
+    public void setDeposito(int deposito) {
+        this.deposito = deposito;
+    }
+
     public void addPianeta(Pianeta pianeta){listaPianeti.add(pianeta);}
     //Metodi Getter e Setter;
+
     public int getDeposito(){
         return deposito;
     }
@@ -43,7 +52,7 @@ public class Settore {
      */
     public int getRegaliDistinti(){
         HashMap<String,Integer> contatoreRegali = new HashMap<>();
-        for(Pianeta pianeta : listaPianeti)
+        for(Pianeta pianeta : getListaPianeti())
             for(Citta citta : pianeta.getListaCitta())
                 for(Regalo regalo : citta.getListaRegali())
                 {
@@ -273,6 +282,27 @@ public class Settore {
         }
         return false;
     }
+
+    /**
+     * c1-c2-c4
+     * se c'è un collegamento di tre citta
+     *      confronta i regali richiesti di tipologia arte della prima citta con la seconda e la terza
+     *      se il numero di regali di tipologia arte nelle tre città è uguale
+     *          cofronta i regali richiesti di tipologia elettronica della prima città con la seconda e la terza
+     *          se il numero di regali richiesti di tipologia elettronica è uguale per le tre citta
+     *              return false
+     * return true;
+     *
+     *
+     * c1 = arte = 1, elettronica = 2, sport = 1
+     * c2 = arte = 3, elettronica = 4, sport = 2
+     * c4 = arte = 8, elettronica = 12, sport = 3
+     *
+     * FALSE
+     * TRUE
+     *
+     *
+     */
 
 
 
