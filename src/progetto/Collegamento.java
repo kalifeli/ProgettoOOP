@@ -1,17 +1,17 @@
 package progetto;
 
 public class Collegamento {
-    private Citta citta1;
-    private Citta citta2;
+    private String citta1;
+    private String citta2;
     private int tempo;
 
-    public Collegamento(Citta citta1,Citta citta2, int tempo) {
+    public Collegamento(String citta1,String citta2, int tempo) {
         this.citta1 = citta1;
         this.citta2 = citta2;
         this.tempo = tempo;
     }
-    public Citta getCitta1(){return citta1;}
-    public Citta getCitta2() {
+    public String getCitta1(){return citta1;}
+    public String getCitta2() {
             return citta2;
         }
     public int getTempo() {
