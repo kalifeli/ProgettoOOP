@@ -1,13 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="eb53f33c-27c3-4b1f-a8a8-f6859cb93e02" name="Changes" comment="Aggiunta di un commento per ricordare di aggiungere per gli esercizi dal 2 al 7 della task 1 una verifica.&#10;Ho sistemato il metodo task2_1 e aggiunto il metodo task2_2">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/progetto/Collegamento.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/progetto/Collegamento.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/progetto/Pianeta.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/progetto/Pianeta.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/progetto/Progetto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/progetto/Progetto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/progetto/Settore.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/progetto/Settore.java" afterDir="false" />
-    </list>
+    <list default="true" id="eb53f33c-27c3-4b1f-a8a8-f6859cb93e02" name="Changes" comment="aggiunta delle istruzioni per la lettura da stdin dei dati per popolare gli oggetti del varie classi, problemi nella stampa di getRegaliTotali() e getRegaliDistinti().&#10;Non so ancora se il problema risiede nella scrittura errata dei metodi o nel codice che legge in modo errato i dati" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -28,6 +22,9 @@
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="ProjectErrors" />
   </component>
   <component name="ProjectId" id="2JuhUp1XM9tUCBrBqvVq9071KcC" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -172,7 +169,42 @@
       <option name="project" value="LOCAL" />
       <updated>1673278856021</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Cambiamento del tipo di attributi citta1 e citta2 e dei relativi metodi getter che ora diventano String">
+      <created>1673342702819</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1673342702819</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Aggiunta di un attributo che indica il numero di citta nel Pianeta e che viene inizializzato nel costruttore che è quindi stato modificato.&#10;Aggiunta di un metodo addCitta che aggiunge una città nella lista delle città del Pianeta">
+      <created>1673342864120</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1673342864120</updated>
+    </task>
+    <task id="LOCAL-00017" summary="Creazione di un costruttore vuoto, di un metodo setDeposito che mi consente di settare il deposito">
+      <created>1673342999310</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1673342999310</updated>
+    </task>
+    <task id="LOCAL-00018" summary="-">
+      <created>1673343011955</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1673343011955</updated>
+    </task>
+    <task id="LOCAL-00019" summary="aggiunta delle istruzioni per la lettura da stdin dei dati per popolare gli oggetti del varie classi, problemi nella stampa di getRegaliTotali() e getRegaliDistinti().&#10;Non so ancora se il problema risiede nella scrittura errata dei metodi o nel codice che legge in modo errato i dati">
+      <created>1673343158208</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1673343158208</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -204,6 +236,11 @@
     <MESSAGE value="eliminato metodo inutile" />
     <MESSAGE value="Provato task2_1 e task_2, sembrano funzionare ma dovrei riprovarle con nuovi esempio per essere sicuro" />
     <MESSAGE value="Aggiunta di un commento per ricordare di aggiungere per gli esercizi dal 2 al 7 della task 1 una verifica.&#10;Ho sistemato il metodo task2_1 e aggiunto il metodo task2_2" />
-    <option name="LAST_COMMIT_MESSAGE" value="Aggiunta di un commento per ricordare di aggiungere per gli esercizi dal 2 al 7 della task 1 una verifica.&#10;Ho sistemato il metodo task2_1 e aggiunto il metodo task2_2" />
+    <MESSAGE value="Cambiamento del tipo di attributi citta1 e citta2 e dei relativi metodi getter che ora diventano String" />
+    <MESSAGE value="Aggiunta di un attributo che indica il numero di citta nel Pianeta e che viene inizializzato nel costruttore che è quindi stato modificato.&#10;Aggiunta di un metodo addCitta che aggiunge una città nella lista delle città del Pianeta" />
+    <MESSAGE value="Creazione di un costruttore vuoto, di un metodo setDeposito che mi consente di settare il deposito" />
+    <MESSAGE value="-" />
+    <MESSAGE value="aggiunta delle istruzioni per la lettura da stdin dei dati per popolare gli oggetti del varie classi, problemi nella stampa di getRegaliTotali() e getRegaliDistinti().&#10;Non so ancora se il problema risiede nella scrittura errata dei metodi o nel codice che legge in modo errato i dati" />
+    <option name="LAST_COMMIT_MESSAGE" value="aggiunta delle istruzioni per la lettura da stdin dei dati per popolare gli oggetti del varie classi, problemi nella stampa di getRegaliTotali() e getRegaliDistinti().&#10;Non so ancora se il problema risiede nella scrittura errata dei metodi o nel codice che legge in modo errato i dati" />
   </component>
 </project>
