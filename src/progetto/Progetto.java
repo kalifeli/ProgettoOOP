@@ -25,7 +25,7 @@ public class Progetto {
             Regalo regaloTemp = new Regalo(campi[0],Double.parseDouble(campi[1]),campi[2]);
             listaRegali.add(regaloTemp);
         }
-        // genero la lista dei pianeti con i pianeti letti in input dal file
+        // istanzio oggetti di tipo Pianeta con i dati letti in input dal file e li aggiungo nella lista dei pianeti del settore 1
         int numeroCittaTotali = 0;
         for(int i = 0; i < numeroPianeti; ++i)
         {
@@ -35,6 +35,7 @@ public class Progetto {
             s1.addPianeta(pianetaTemp);
             numeroCittaTotali += pianetaTemp.getNumeroCitta();
         }
+
 
         // istanzio le citta e aggiungerle nei rispettivi pianeti di appartenenza
         for(int i = 0; i < numeroCittaTotali; ++i)
@@ -66,25 +67,28 @@ public class Progetto {
                     pianeta.addCitta(cittaTemp);
                 }
             }
+
         }
 
-        for(int i = 0; i < numeroCittaTotali; ++i)
-        {
+        for(int i = 0; i < numeroCittaTotali; ++i){
+            if(!scanner.hasNextLine()) {
+                break;
+            }
             temp = scanner.nextLine();
             campi = temp.split(" : ");
+            String[] regaliTemp = campi[1].split(",");
             for(Pianeta pianeta : s1.getListaPianeti())
                 for(Citta citta : pianeta.getListaCitta())
                 {
                     if(citta.getNomeCitta().equals(campi[0])){
-                        String[] regaliTemp = campi[1].split(",");
+
                         for(int j = 0; j < regaliTemp.length; ++j)
                         {
                             for(Regalo regalo : listaRegali){
-                                if(regaliTemp[0].equals(regalo.getNomeRegalo())) {
+                                if(regaliTemp[j].equals(regalo.getNomeRegalo())) {
                                     citta.addRegalo(regalo);
                                 }
                             }
-
                         }
 
                     }
@@ -92,21 +96,26 @@ public class Progetto {
                 }
 
         }
-        System.out.println(s1.getRegaliTotali() + " " + s1.getRegaliDistinti()); // 12 4
-        s1.getRegaliTotaliPerTipologia(); // 5 4 3
-        System.out.println(s1.getPianetaMostRegali()); // p1
-        System.out.println(s1.getPianetaMostCosto()); // p1
-        System.out.println(s1.getCittaMostRegali());// c1
-        System.out.println(s1.getCittadinaMostCase());
-        System.out.println(s1.getCittaMostCollegamenti());// c2
+        temp = scanner.nextLine();
+        campi = temp.split(" ");
 
-        if(s1.task2_1(1,10))
-            System.out.println("YES");
-        if (s1.task2_2())
-            System.out.println("YES");
-        System.out.println();
-        if(s1.task2_4())
-            System.out.println("YES");
-
+        switch(campi[0]){
+            case "TASK1":
+                System.out.println(s1.getRegaliTotali() + " " + s1.getRegaliDistinti()); // 12 4
+                s1.task1_2(); // 5 4 3
+                System.out.println(s1.getPianetaMostRegali()); // p1
+                System.out.println(s1.getPianetaMostCosto()); // p1
+                System.out.println(s1.getCittaMostRegali());// c1
+                System.out.println(s1.getCittadinaMostCase());
+                System.out.println(s1.getCittaMostCollegamenti());// c2
+                break;
+            case "TASK2":
+                int p = Integer.parseInt(campi[1]);
+                int q = Integer.parseInt(campi[2]);
+                if(s1.task2_1(p,q) && s1.task2_2() && s1.task2_4())
+                    System.out.println("YES");
+                else
+                    System.out.println("NO");
+        }
     }
 }
