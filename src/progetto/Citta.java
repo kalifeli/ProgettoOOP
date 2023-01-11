@@ -6,6 +6,10 @@ public class Citta {
     private ArrayList<Regalo> listaRegali;
     private ArrayList<Collegamento> listaCollegamenti;
 
+    private Pianeta pianeta; //NUOVA AGGIUNTA PER TASK3  //Devo metterlo nel costruttore?
+    private int regaliRichiesti; //NUOVA AGGIUNTA PER TASK3
+    private boolean statoVisita;   //NUOVA AGGIUNTA PER TASK3; "ISVISITED" IN INGLESE
+
 
     //Costruttore
     public Citta(String nomeCitta){
@@ -93,6 +97,57 @@ public class Citta {
                 return true;
         }
         return false;
+    }
+
+    /**
+     * Metodo che mi restituisce quanti regali sono nella lista
+     * @param p
+     * @return
+     */
+    public int getRegaliRichiesti(Pianeta p){
+        int regaliRichiesti = 0;
+        for (Citta c : p.getListaCitta()){
+            regaliRichiesti = c.getListaRegali().size();
+        }
+        return regaliRichiesti; //effettivamente viene aggiornato bene?  //NUOVA AGGIUNTA PER TASK3
+    }
+
+    /**
+     * Metodo per ottenere il pianeta di una città
+     * @return
+     */
+    public Pianeta getPianeta(){   //NUOVA AGGIUNTA PER TASK3
+        return this.pianeta;
+    }
+
+    /**
+     * Metodo che restituisce un booleano e controlla se una citta è connessa a un'altra
+     * @param citta
+     * @return
+     */
+    public boolean isConnectedTo(Citta citta){
+        for (Collegamento c : listaCollegamenti){
+            if (c.getCitta1().equals(this.nomeCitta) && c.getCitta2().equals(citta.getNomeCitta())){
+                return true;
+            }
+        }
+        return false;      //NUOVA AGGIUNTA PER TASK3
+    }
+
+    /**
+     * Metodo che setta i regali richiesti
+     * @param regali
+     */
+    public void setRegaliRichiesti(int regali){    //NUOVA AGGIUNTA PER TASK3
+        this.regaliRichiesti = regali;
+    }
+
+    /**
+     * Metodo che imposta lo statoVisita per le città
+     * @param visitaEffettuata
+     */
+    public void impostaStatoVisita(boolean visitaEffettuata){
+        this.statoVisita = visitaEffettuata;           //NUOVA AGGIUNTA TASK3; "VISITED" IN INGLESE
     }
 }
 

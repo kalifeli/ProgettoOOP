@@ -5,6 +5,7 @@ public class Pianeta {
     private String nomePianeta;
     private int numeroCitta;
     private ArrayList<Citta> listaCitta;
+    private boolean statoVisita;   //NUOVA AGGIUNTA PER TASK3; "ISVISITED" IN INGLESE
 
     /**
      * Costruttore della classe Pianeta che è descritto univocamente da un nome e da il numero dei regali totali
@@ -24,5 +25,21 @@ public class Pianeta {
     }
 
     public void addCitta(Citta citta){listaCitta.add(citta);}
+    /**
+     * metodo che imposta lo statoVisita a visita effettuata
+     * @param visitaEffettuata
+     */
+    public void impostaStatoVisita(boolean visitaEffettuata){
+        this.statoVisita = visitaEffettuata;           //NUOVA AGGIUNTA TASK3; "VISITED" IN INGLESE
+    }
+
+    /**
+     * Metodo che ritorna lo statoVisita
+     * @return
+     */
+    public boolean getStatoVisita(){
+        this.statoVisita = statoVisita;
+        return statoVisita;
+    }
 
 }
