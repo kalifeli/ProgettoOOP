@@ -69,6 +69,20 @@ public class Citta {
         }
         return costo;
     }
+
+    /**
+     * Metodo che restituisce il numero di regali richiesti in una città di una tipologia
+     * @param tipoRegalo una stringa che rappresenta il tipo del regalo richiesto
+     * @return un intero che rappresenta il numero totale di regali della tipologia indicata richiesti in una citta
+     */
+    public int getNumeroRegaliDiTipo(String tipoRegalo){
+        int contatoreTipoRegalo = 0;
+        for(Regalo regalo : getListaRegali()) {
+            if (regalo.getTipoRegalo() == tipoRegalo)
+                contatoreTipoRegalo++;
+        }
+        return contatoreTipoRegalo;
+    }
 }
 
 
