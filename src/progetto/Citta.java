@@ -8,6 +8,10 @@ public class Citta {
 
 
     //Costruttore
+    public Citta(String nomeCitta){
+        this.nomeCitta = nomeCitta;
+        this.numeroCase = -1;
+    }
     public Citta(String nomeCitta, int numeroCase) {
         this.nomeCitta = nomeCitta;
         this.numeroCase = numeroCase;
@@ -78,10 +82,17 @@ public class Citta {
     public int getNumeroRegaliDiTipo(String tipoRegalo){
         int contatoreTipoRegalo = 0;
         for(Regalo regalo : getListaRegali()) {
-            if (regalo.getTipoRegalo() == tipoRegalo)
+            if (regalo.getTipoRegalo().equals(tipoRegalo))
                 contatoreTipoRegalo++;
         }
         return contatoreTipoRegalo;
+    }
+    public boolean esistenzaCollegamento(Citta citta1,Citta citta2){
+        for(Collegamento collegamento1 : citta1.getListaCollegamenti()){
+            if(collegamento1.getCitta2().getNomeCitta().equals(citta2.getNomeCitta()))
+                return true;
+        }
+        return false;
     }
 }
 

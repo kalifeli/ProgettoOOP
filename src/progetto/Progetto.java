@@ -53,8 +53,9 @@ public class Progetto {
                     //creo un aray di String che mi rappresenti nel campo[0] == citta2, campo[1] == costo
                     // datiCollegamenti viene ad ogni iterazione del ciclo for
                     String[] datiCollegamenti = collegamenti[j].split("#");
+                    Citta cittaDest = new Citta(datiCollegamenti[0]);
                     // istanzio un collegamento temporaneo che mi permette di tener traccia ogni volta dei collegamenti che creo
-                    Collegamento collegamentoTemp = new Collegamento(campi[0],datiCollegamenti[0],Integer.parseInt(datiCollegamenti[1]));
+                    Collegamento collegamentoTemp = new Collegamento(cittaTemp,cittaDest,Integer.parseInt(datiCollegamenti[1]));
                     //aggiungo ogni volta il collegamento all'interno della listaCollegamenti della città
                     cittaTemp.addCollegamento(collegamentoTemp);
                 }
@@ -96,6 +97,19 @@ public class Progetto {
                 }
 
         }
+        // inizializzo le citta che erano passate come collegamenti come dei veri oggetti
+        for(Pianeta pianeta : s1.getListaPianeti()){
+            for(Citta citta1 : pianeta.getListaCitta()){
+                for(Citta citta2 : pianeta.getListaCitta()){
+                    for(Collegamento collegamento : citta1.getListaCollegamenti()){
+                        if(collegamento.getCitta2().getNomeCitta().equals(citta2.getNomeCitta())){
+                            collegamento.setCitta2(citta2);
+                        }
+                    }
+                }
+            }
+        }
+
         temp = scanner.nextLine();
         campi = temp.split(" ");
 
@@ -112,7 +126,7 @@ public class Progetto {
             case "TASK2":
                 int p = Integer.parseInt(campi[1]);
                 int q = Integer.parseInt(campi[2]);
-                if(s1.task2_1(p,q) && s1.task2_2() && s1.task2_4())
+                if(s1.task2_1(p,q) && s1.task2_2() && s1.task2_3() && s1.task2_4())
                     System.out.println("YES");
                 else
                     System.out.println("NO");

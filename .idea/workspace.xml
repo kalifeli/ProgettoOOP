@@ -2,10 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="eb53f33c-27c3-4b1f-a8a8-f6859cb93e02" name="Changes" comment="-">
+      <change afterPath="$PROJECT_DIR$/src/progetto/Simulazione.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/progetto/Citta.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/progetto/Citta.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/progetto/Collegamento.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/progetto/Collegamento.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/progetto/Progetto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/progetto/Progetto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/progetto/Regalo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/progetto/Regalo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/progetto/Settore.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/progetto/Settore.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -56,7 +57,7 @@
       <option name="MAIN_CLASS_NAME" value="progetto.Progetto" />
       <module name="ProgettoOOP" />
       <option name="REDIRECT_INPUT" value="true" />
-      <option name="INPUT_FILE" value="$PROJECT_DIR$/../Esempi_traccia_A(2)/es_input_1.txt" />
+      <option name="INPUT_FILE" value="$PROJECT_DIR$/../Esempi_traccia_A(2)/es_input_2.txt" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="progetto.*" />
@@ -217,7 +218,42 @@
       <option name="project" value="LOCAL" />
       <updated>1673343341433</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="aggiunta di un metodo &quot;getNumeroRegaliDiTipo&quot;, che può essere utile per il metodo task2_3">
+      <created>1673438295364</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1673438295364</updated>
+    </task>
+    <task id="LOCAL-00022" summary="correzione problema presa dati da stdin, aggiunta della lettura dell'ultima riga del file input.txt che riguarda lo svolgimento di una precisa task.">
+      <created>1673438458034</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1673438458034</updated>
+    </task>
+    <task id="LOCAL-00023" summary="aggiunta di un metodo toString() per cotrollo">
+      <created>1673438489073</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1673438489073</updated>
+    </task>
+    <task id="LOCAL-00024" summary="aggiunta per tutti gli esercizi da 3 a 7 della task1 un controllo che restituisce in caso di presenza di piu nomi validi, il primo in ordine lessicografico crescente">
+      <created>1673438564706</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1673438564706</updated>
+    </task>
+    <task id="LOCAL-00025" summary="-">
+      <created>1673438573516</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1673438573516</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -253,6 +289,10 @@
     <MESSAGE value="Aggiunta di un attributo che indica il numero di citta nel Pianeta e che viene inizializzato nel costruttore che è quindi stato modificato.&#10;Aggiunta di un metodo addCitta che aggiunge una città nella lista delle città del Pianeta" />
     <MESSAGE value="Creazione di un costruttore vuoto, di un metodo setDeposito che mi consente di settare il deposito" />
     <MESSAGE value="aggiunta delle istruzioni per la lettura da stdin dei dati per popolare gli oggetti del varie classi, problemi nella stampa di getRegaliTotali() e getRegaliDistinti().&#10;Non so ancora se il problema risiede nella scrittura errata dei metodi o nel codice che legge in modo errato i dati" />
+    <MESSAGE value="aggiunta di un metodo &quot;getNumeroRegaliDiTipo&quot;, che può essere utile per il metodo task2_3" />
+    <MESSAGE value="correzione problema presa dati da stdin, aggiunta della lettura dell'ultima riga del file input.txt che riguarda lo svolgimento di una precisa task." />
+    <MESSAGE value="aggiunta di un metodo toString() per cotrollo" />
+    <MESSAGE value="aggiunta per tutti gli esercizi da 3 a 7 della task1 un controllo che restituisce in caso di presenza di piu nomi validi, il primo in ordine lessicografico crescente" />
     <MESSAGE value="-" />
     <option name="LAST_COMMIT_MESSAGE" value="-" />
   </component>

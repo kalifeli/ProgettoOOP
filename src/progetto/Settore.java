@@ -107,7 +107,7 @@ public class Settore {
         // una lista in cui introduco nomi di pianeta che hanno lo stesso numero di regali massimi
         ArrayList<String> nomiValidi = new ArrayList<>();
         int maxRegali = 0;
-        String pianetaMostRegali = "";
+        String pianetaMostRegali;
 
         for (Pianeta pianeta : getListaPianeti()) {
             int numeroRegali = 0;
@@ -141,7 +141,7 @@ public class Settore {
      */
     public String getPianetaMostCosto() {
         ArrayList<String> nomiValidi = new ArrayList<>();
-        String pianetaMostCosto = "";
+        String pianetaMostCosto;
         // inizializzo la variabile che conterrà il costo massimo dei regali richiesti in un pianeta
         double costoMax = 0;
 
@@ -334,6 +334,59 @@ public class Settore {
      * numero di regali di tipo arte ed elettronica
      * @return
      */
+    public boolean task2_3(){
+        boolean valido = true;
+        for(Pianeta pianeta : getListaPianeti()){
+            for(Citta citta : pianeta.getListaCitta()){
+                for(Collegamento collegamento1 : citta.getListaCollegamenti()){
+                    for(Collegamento collegamento2 : collegamento1.getCitta2().getListaCollegamenti()){
+
+                        if(citta.esistenzaCollegamento(collegamento2.getCitta2(),collegamento1.getCitta1())){
+                            int[] regaliArte = new int[3];
+                            int[] regaliElettronica = new int[3];
+                            //inizializzo i vettori
+                            for(int i = 0; i < 3; ++i){
+                                regaliArte[i] = 0;
+                                regaliElettronica[i] = 0;
+                            }
+
+                            for(Regalo regalo : citta.getListaRegali()){
+                                // riservo il campo 0 per città c1
+                                if(regalo.getTipoRegalo().equals("arte"))
+                                    regaliArte[0] += 1;
+                                if(regalo.getTipoRegalo().equals("elettronica"))
+                                    regaliElettronica[0] += 1;
+                            }
+                            for(Regalo regalo : collegamento1.getCitta2().getListaRegali()){
+                                // riservo il campo 1 per città c2
+                                if(regalo.getTipoRegalo().equals("arte"))
+                                    regaliArte[1] += 1;
+                                if(regalo.getTipoRegalo().equals("elettronica"))
+                                    regaliElettronica[1] += 1;
+                            }
+                            for(Regalo regalo : collegamento2.getCitta2().getListaRegali()){
+                                // riservo il campo 2 per città c3
+                                if(regalo.getTipoRegalo().equals("arte"))
+                                    regaliArte[2] += 1;
+                                if(regalo.getTipoRegalo().equals("elettronica"))
+                                    regaliElettronica[2] += 1;
+                            }
+                            int n = regaliArte[0];
+                            for(int i = 0; i < 3; ++i){
+                                if(regaliArte[i] == n && regaliElettronica[i] == n)
+                                    valido = false;
+                                else
+                                    return true;
+                            }
+
+                        }
+                    }
+                }
+            }
+        }
+        return valido;
+    }
+
 
     /**
      * Metodo booleano che restituisce true se per ogni pianeta non vi sono due città in cui non è stato richiesto almeno un regalo dello
