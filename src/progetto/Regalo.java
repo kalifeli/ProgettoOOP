@@ -19,9 +19,4 @@ public class Regalo {
     public String getTipoRegalo() {
         return tipoRegalo;
     }
-
-    @Override
-    public String toString() {
-        return  nomeRegalo;
-    }
 }

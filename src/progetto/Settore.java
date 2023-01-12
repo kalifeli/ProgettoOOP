@@ -62,11 +62,6 @@ public class Settore {
                 }
         return contatoreRegali.size();
     }
-    /**
-     * Per i quesiti da 2 a 7, nel caso in cui vi siano più nomi validi (es, due pianeti con lo stesso numero
-     * massimo), restituire il primo in ordine lessicografico crescente. La risposta ad ogni quesito sta su di
-     * una singola riga. Se non vi è una risposta per un quesito, stampare una riga vuota.
-     */
 
     /**
      * Task 1) 2. Metodo che stampa il numero dei regali, di un settore, di ogni tipologia

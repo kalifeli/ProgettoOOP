@@ -130,6 +130,25 @@ public class Progetto {
                     System.out.println("YES");
                 else
                     System.out.println("NO");
+                break;
+            case "TASK3":
+                Simulazione simulazione = new Simulazione(s1);
+                int numeroCittaDaVisitare = Integer.parseInt(campi[1]);
+                ArrayList<Citta> pianoDiConsegna = new ArrayList<>();
+                for(int i = 0; i < numeroCittaDaVisitare;++i){
+                    temp = scanner.nextLine();
+                    for(Pianeta pianeta: s1.getListaPianeti()){
+                        for(Citta citta : pianeta.getListaCitta())
+                        {
+                            if(citta.getNomeCitta().equals(temp)){
+                                pianoDiConsegna.add(citta);
+                            }
+                        }
+                    }
+                }
+                simulazione.simula(pianoDiConsegna,s1);
+
+
         }
     }
 }

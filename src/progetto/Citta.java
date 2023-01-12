@@ -1,15 +1,10 @@
 package progetto;
 import java.util.ArrayList;
-public class Citta {
+public class Citta{
     private String nomeCitta;
     private int numeroCase;
     private ArrayList<Regalo> listaRegali;
     private ArrayList<Collegamento> listaCollegamenti;
-
-    private Pianeta pianeta; //NUOVA AGGIUNTA PER TASK3  //Devo metterlo nel costruttore?
-    private int regaliRichiesti; //NUOVA AGGIUNTA PER TASK3
-    private boolean statoVisita;   //NUOVA AGGIUNTA PER TASK3; "ISVISITED" IN INGLESE
-
 
     //Costruttore
     public Citta(String nomeCitta){
@@ -22,8 +17,6 @@ public class Citta {
         this.listaCollegamenti = new ArrayList<>(); // alla chiamata del costruttore della classe(ovvero alla creazione di una città), vado a creare una lista di Regali e Collegamenti per quella città;
         this.listaRegali = new ArrayList<>();
     }
-
-    //Metodi getter e setter
 
     /**
      * Metodo di accesso alla variabile esemplare nomeCitta
@@ -77,20 +70,6 @@ public class Citta {
         }
         return costo;
     }
-
-    /**
-     * Metodo che restituisce il numero di regali richiesti in una città di una tipologia
-     * @param tipoRegalo una stringa che rappresenta il tipo del regalo richiesto
-     * @return un intero che rappresenta il numero totale di regali della tipologia indicata richiesti in una citta
-     */
-    public int getNumeroRegaliDiTipo(String tipoRegalo){
-        int contatoreTipoRegalo = 0;
-        for(Regalo regalo : getListaRegali()) {
-            if (regalo.getTipoRegalo().equals(tipoRegalo))
-                contatoreTipoRegalo++;
-        }
-        return contatoreTipoRegalo;
-    }
     public boolean esistenzaCollegamento(Citta citta1,Citta citta2){
         for(Collegamento collegamento1 : citta1.getListaCollegamenti()){
             if(collegamento1.getCitta2().getNomeCitta().equals(citta2.getNomeCitta()))
@@ -100,54 +79,26 @@ public class Citta {
     }
 
     /**
-     * Metodo che mi restituisce quanti regali sono nella lista
-     * @param p
-     * @return
+     * Metodo che accede alla size della lista dei regali della citta
+     * @return un intero rappresentante il numero di regali richiesti
      */
-    public int getRegaliRichiesti(Pianeta p){
-        int regaliRichiesti = 0;
-        for (Citta c : p.getListaCitta()){
-            regaliRichiesti = c.getListaRegali().size();
-        }
-        return regaliRichiesti; //effettivamente viene aggiornato bene?  //NUOVA AGGIUNTA PER TASK3
+    public int getRegaliRichiesti(){
+        return getListaRegali().size();
     }
 
     /**
      * Metodo per ottenere il pianeta di una città
      * @return
      */
-    public Pianeta getPianeta(){   //NUOVA AGGIUNTA PER TASK3
-        return this.pianeta;
-    }
-
-    /**
-     * Metodo che restituisce un booleano e controlla se una citta è connessa a un'altra
-     * @param citta
-     * @return
-     */
-    public boolean isConnectedTo(Citta citta){
-        for (Collegamento c : listaCollegamenti){
-            if (c.getCitta1().equals(this.nomeCitta) && c.getCitta2().equals(citta.getNomeCitta())){
-                return true;
+    public Pianeta getPianeta(Settore s1){
+        Pianeta pianeta = null;
+        for(Pianeta p : s1.getListaPianeti()){
+            for(Citta citta : p.getListaCitta()){
+                if(citta.getNomeCitta().equals(getNomeCitta()))
+                    pianeta = p;
             }
         }
-        return false;      //NUOVA AGGIUNTA PER TASK3
-    }
-
-    /**
-     * Metodo che setta i regali richiesti
-     * @param regali
-     */
-    public void setRegaliRichiesti(int regali){    //NUOVA AGGIUNTA PER TASK3
-        this.regaliRichiesti = regali;
-    }
-
-    /**
-     * Metodo che imposta lo statoVisita per le città
-     * @param visitaEffettuata
-     */
-    public void impostaStatoVisita(boolean visitaEffettuata){
-        this.statoVisita = visitaEffettuata;           //NUOVA AGGIUNTA TASK3; "VISITED" IN INGLESE
+        return pianeta;
     }
 }
 
