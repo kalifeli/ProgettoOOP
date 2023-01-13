@@ -27,7 +27,7 @@ public class Pianeta {
     public void addCitta(Citta citta){listaCitta.add(citta);}
     /**
      * metodo che imposta lo statoVisita a visita effettuata
-     * @param statoVisita
+     * @param statoVisita booleano che indica se il pianeta è stato visitato
      */
     public void impostaStatoVisita(boolean statoVisita){
         this.statoVisita = statoVisita;
@@ -35,7 +35,7 @@ public class Pianeta {
 
     /**
      * Metodo che ritorna lo statoVisita
-     * @return
+     * @return true se il pianeta è stato visitato, altrimenti false
      */
     public boolean getStatoVisita(){
         return statoVisita;

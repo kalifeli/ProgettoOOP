@@ -37,8 +37,8 @@ public class Citta{
      * Permette, in base al numero di case di una città, di definire la sua grandezza
      * @return true se il numero di case è al più 10, altrimenti false
      */
-    public boolean isPaesino() {
-        return numeroCase <= 10;
+    public boolean isCittadina() { // !isPaesino
+        return numeroCase > 10;
     }
 
     public ArrayList<Regalo> getListaRegali() {
@@ -48,7 +48,7 @@ public class Citta{
 
     /**
      * Permette di aggiungere un regalo nella lista dei regali della città
-     * @param regalo
+     * @param regalo oggetto di tipo Regalo da aggiungere alla lista dei regali
      */
     public void addRegalo(Regalo regalo) {listaRegali.add(regalo);}
 
@@ -88,7 +88,7 @@ public class Citta{
 
     /**
      * Metodo per ottenere il pianeta di una città
-     * @return
+     * @return un oggetto Pianeta
      */
     public Pianeta getPianeta(Settore s1){
         Pianeta pianeta = null;

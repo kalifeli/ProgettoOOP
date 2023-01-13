@@ -12,10 +12,6 @@ public class Settore {
         this.deposito = 0;
         this.listaPianeti = new ArrayList<>();
     }
-    public Settore(int deposito){
-        this.deposito = deposito;
-        this.listaPianeti = new ArrayList<>();
-    }
 
     public void setDeposito(int deposito) {
         this.deposito = deposito;
@@ -75,17 +71,10 @@ public class Settore {
             for(Citta citta : pianeta.getListaCitta())
             {
                 for(Regalo regalo : citta.getListaRegali()) {
-                    switch (regalo.getTipoRegalo())
-                    {
-                        case "arte":
-                            regaliArte++;
-                            break;
-                        case "elettronica":
-                            regaliElettronica++;
-                            break;
-                        case "sport":
-                            regaliSport++;
-                            break;
+                    switch (regalo.getTipoRegalo()) {
+                        case "arte" -> regaliArte++;
+                        case "elettronica" -> regaliElettronica++;
+                        case "sport" -> regaliSport++;
                     }
                 }
             }
@@ -217,12 +206,12 @@ public class Settore {
         int maxCase = 0;
         for (Pianeta pianeta : getListaPianeti()){
             for (Citta citta : pianeta.getListaCitta()){
-                if (!citta.isPaesino() && citta.getNumeroCase() > maxCase) {
+                if (citta.isCittadina() && citta.getNumeroCase() > maxCase) {
                     maxCase = citta.getNumeroCase();
                     cittadinaMostcase = citta.getNomeCitta();
                     nomiValidi.clear();
                     nomiValidi.add(cittadinaMostcase);
-                } else if (!citta.isPaesino() && citta.getNumeroCase() == maxCase) {
+                } else if (!citta.isCittadina() && citta.getNumeroCase() == maxCase) {
                     nomiValidi.add(citta.getNomeCitta());
                 }
             }
@@ -327,7 +316,8 @@ public class Settore {
     /**
      * Metodo che torna true se per ogni pianeta, non vi sono tre città collegate tra loro in cui sono stati richiesti lo stesso
      * numero di regali di tipo arte ed elettronica
-     * @return
+     * @return true se per ogni pianeta, non vi sono tre città collegate tra loro in cui sono stati richiesti lo stesso
+     * numero di regali di tipo arte ed elettronica
      */
     public boolean task2_3(){
         boolean valido = true;
@@ -339,11 +329,6 @@ public class Settore {
                         if(citta.esistenzaCollegamento(collegamento2.getCitta2(),collegamento1.getCitta1())){
                             int[] regaliArte = new int[3];
                             int[] regaliElettronica = new int[3];
-                            //inizializzo i vettori
-                            for(int i = 0; i < 3; ++i){
-                                regaliArte[i] = 0;
-                                regaliElettronica[i] = 0;
-                            }
 
                             for(Regalo regalo : citta.getListaRegali()){
                                 // riservo il campo 0 per città c1

@@ -49,13 +49,13 @@ public class Progetto {
                 String[] collegamenti = campi[3].split(",");
 
                 //su tutti i campi di collegamenti
-                for(int j = 0; j < collegamenti.length; ++j){
+                for (String s : collegamenti) {
                     //creo un aray di String che mi rappresenti nel campo[0] == citta2, campo[1] == costo
                     // datiCollegamenti viene ad ogni iterazione del ciclo for
-                    String[] datiCollegamenti = collegamenti[j].split("#");
+                    String[] datiCollegamenti = s.split("#");
                     Citta cittaDest = new Citta(datiCollegamenti[0]);
                     // istanzio un collegamento temporaneo che mi permette di tener traccia ogni volta dei collegamenti che creo
-                    Collegamento collegamentoTemp = new Collegamento(cittaTemp,cittaDest,Integer.parseInt(datiCollegamenti[1]));
+                    Collegamento collegamentoTemp = new Collegamento(cittaTemp, cittaDest, Integer.parseInt(datiCollegamenti[1]));
                     //aggiungo ogni volta il collegamento all'interno della listaCollegamenti della città
                     cittaTemp.addCollegamento(collegamentoTemp);
                 }
@@ -83,10 +83,9 @@ public class Progetto {
                 {
                     if(citta.getNomeCitta().equals(campi[0])){
 
-                        for(int j = 0; j < regaliTemp.length; ++j)
-                        {
-                            for(Regalo regalo : listaRegali){
-                                if(regaliTemp[j].equals(regalo.getNomeRegalo())) {
+                        for (String s : regaliTemp) {
+                            for (Regalo regalo : listaRegali) {
+                                if (s.equals(regalo.getNomeRegalo())) {
                                     citta.addRegalo(regalo);
                                 }
                             }

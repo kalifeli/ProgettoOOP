@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="eb53f33c-27c3-4b1f-a8a8-f6859cb93e02" name="Changes" comment="rettifica di alcuni metodi, aggiunta della lettura in stdin della task3, creazione classe simulazione">
+    <list default="true" id="eb53f33c-27c3-4b1f-a8a8-f6859cb93e02" name="Changes" comment="Manca da rettificare la task2_4, per il resto dovrebbe andare tutto bene.&#10;Ho aggiunto un controllo per la task3, ma è da rivedere">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/progetto/Citta.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/progetto/Citta.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/progetto/Pianeta.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/progetto/Pianeta.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/progetto/Progetto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/progetto/Progetto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/progetto/Simulazione.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/progetto/Simulazione.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/progetto/Settore.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/progetto/Settore.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -264,7 +266,14 @@
       <option name="project" value="LOCAL" />
       <updated>1673600746886</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="Manca da rettificare la task2_4, per il resto dovrebbe andare tutto bene.&#10;Ho aggiunto un controllo per la task3, ma è da rivedere">
+      <created>1673625397143</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1673625397143</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -317,6 +326,7 @@
     <MESSAGE value="aggiunta per tutti gli esercizi da 3 a 7 della task1 un controllo che restituisce in caso di presenza di piu nomi validi, il primo in ordine lessicografico crescente" />
     <MESSAGE value="-" />
     <MESSAGE value="rettifica di alcuni metodi, aggiunta della lettura in stdin della task3, creazione classe simulazione" />
-    <option name="LAST_COMMIT_MESSAGE" value="rettifica di alcuni metodi, aggiunta della lettura in stdin della task3, creazione classe simulazione" />
+    <MESSAGE value="Manca da rettificare la task2_4, per il resto dovrebbe andare tutto bene.&#10;Ho aggiunto un controllo per la task3, ma è da rivedere" />
+    <option name="LAST_COMMIT_MESSAGE" value="Manca da rettificare la task2_4, per il resto dovrebbe andare tutto bene.&#10;Ho aggiunto un controllo per la task3, ma è da rivedere" />
   </component>
 </project>
