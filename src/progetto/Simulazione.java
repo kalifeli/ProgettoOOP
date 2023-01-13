@@ -49,6 +49,7 @@ public class Simulazione {
             }
             //se lo stato della visita è true controllo ogni citta del pianeta visitato
             for(Citta citta : cittaVisitate){
+
                 //vedo se ad ogni città Babbo Natale ha consegnato i regali
                 if(citta.getListaRegali().size() != 0){
                     System.out.println("NOT VALID");    //verifica se tutti i regali sono stati consegnati
