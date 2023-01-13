@@ -1,14 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="eb53f33c-27c3-4b1f-a8a8-f6859cb93e02" name="Changes" comment="-">
+    <list default="true" id="eb53f33c-27c3-4b1f-a8a8-f6859cb93e02" name="Changes" comment="rettifica di alcuni metodi, aggiunta della lettura in stdin della task3, creazione classe simulazione">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/progetto/Citta.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/progetto/Citta.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/progetto/Pianeta.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/progetto/Pianeta.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/progetto/Progetto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/progetto/Progetto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/progetto/Regalo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/progetto/Regalo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/progetto/Settore.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/progetto/Settore.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/progetto/Simulazione.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/progetto/Simulazione.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,7 +54,7 @@
       <option name="MAIN_CLASS_NAME" value="progetto.Progetto" />
       <module name="ProgettoOOP" />
       <option name="REDIRECT_INPUT" value="true" />
-      <option name="INPUT_FILE" value="$PROJECT_DIR$/src/progetto/input4.txt" />
+      <option name="INPUT_FILE" value="$PROJECT_DIR$/../input_Progetto/input2.txt" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="progetto.*" />
@@ -254,7 +250,14 @@
       <option name="project" value="LOCAL" />
       <updated>1673438573516</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="rettifica di alcuni metodi, aggiunta della lettura in stdin della task3, creazione classe simulazione">
+      <created>1673540417698</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1673540417698</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -306,6 +309,7 @@
     <MESSAGE value="aggiunta di un metodo toString() per cotrollo" />
     <MESSAGE value="aggiunta per tutti gli esercizi da 3 a 7 della task1 un controllo che restituisce in caso di presenza di piu nomi validi, il primo in ordine lessicografico crescente" />
     <MESSAGE value="-" />
-    <option name="LAST_COMMIT_MESSAGE" value="-" />
+    <MESSAGE value="rettifica di alcuni metodi, aggiunta della lettura in stdin della task3, creazione classe simulazione" />
+    <option name="LAST_COMMIT_MESSAGE" value="rettifica di alcuni metodi, aggiunta della lettura in stdin della task3, creazione classe simulazione" />
   </component>
 </project>

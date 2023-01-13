@@ -5,7 +5,7 @@ public class Pianeta {
     private String nomePianeta;
     private int numeroCitta;
     private ArrayList<Citta> listaCitta;
-    private boolean statoVisita;
+    private boolean statoVisita; // non essendo stata inizializzta per default viene messa a false;
 
     /**
      * Costruttore della classe Pianeta che è descritto univocamente da un nome e da il numero dei regali totali

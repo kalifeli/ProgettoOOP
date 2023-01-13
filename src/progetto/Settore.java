@@ -178,7 +178,7 @@ public class Settore {
      */
     public String getCittaMostRegali(){
         ArrayList<String> nomiValidi = new ArrayList<>();
-        String cittaMostRegali = "";
+        String cittaMostRegali;
         int maxRegali = 0;
         for (Pianeta pianeta : getListaPianeti()){
             for (Citta citta : pianeta.getListaCitta()){
@@ -408,35 +408,5 @@ public class Settore {
         }
         return false;
     }
-
-    /**
-     * c1-c2-c4
-     * se c'è un collegamento di tre citta
-     *      confronta i regali richiesti di tipologia arte della prima citta con la seconda e la terza
-     *      se il numero di regali di tipologia arte nelle tre città è uguale
-     *          cofronta i regali richiesti di tipologia elettronica della prima città con la seconda e la terza
-     *          se il numero di regali richiesti di tipologia elettronica è uguale per le tre citta
-     *              return false
-     * return true;
-     *
-     *
-     * c1 = arte = 1, elettronica = 2, sport = 1
-     * c2 = arte = 3, elettronica = 4, sport = 2
-     * c4 = arte = 8, elettronica = 12, sport = 3
-     *
-     * FALSE
-     * TRUE
-     *
-     *
-     */
-
-
-
-
-
-
-
-
-
 
 }
