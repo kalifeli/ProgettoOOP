@@ -146,7 +146,7 @@ public class Progetto {
                     }
                 }
                 // vedo se ci sono doppioni di citta all'interno del piano di consegna e se BAbbo Natale visita tutte le citta
-                for(Pianeta pianeta : s1.getListaPianeti()){ // p1 -> c1 c2 c3 c4 piano consegna -> c1 c2 c5 c4 c3
+                for(Pianeta pianeta : s1.getListaPianeti()){ // p1 -> c1 c2 c3 c4  p2 -> c5 piano consegna -> c1 c2 c5 c4 c3
                     for(Citta citta : pianeta.getListaCitta()){
                         int contatore = 0;
                         for(int i = 0; i < numeroCittaDaVisitare; ++i){

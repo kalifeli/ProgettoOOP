@@ -2,9 +2,9 @@ package progetto;
 
 import java.util.ArrayList;
 public class Pianeta {
-    private String nomePianeta;
-    private int numeroCitta;
-    private ArrayList<Citta> listaCitta;
+    private final String nomePianeta;
+    private final int numeroCitta;
+    private final ArrayList<Citta> listaCitta;
     private boolean statoVisita; // non essendo stata inizializzta per default viene messa a false;
 
     /**

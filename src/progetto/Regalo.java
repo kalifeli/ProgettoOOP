@@ -1,9 +1,9 @@
 package progetto;
 
 public class Regalo {
-    private String nomeRegalo;
-    private double costoRegalo;
-    private String tipoRegalo;
+    private final String nomeRegalo;
+    private final double costoRegalo;
+    private final String tipoRegalo;
     //Costruttore
     public Regalo(String nomeRegalo, double costoRegalo, String tipoRegalo) {
         this.nomeRegalo = nomeRegalo;

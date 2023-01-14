@@ -1,8 +1,8 @@
 package progetto;
 import java.util.ArrayList;
 public class Citta{
-    private String nomeCitta;
-    private int numeroCase;
+    private final String nomeCitta;
+    private final int numeroCase;
     private ArrayList<Regalo> listaRegali;
     private ArrayList<Collegamento> listaCollegamenti;
 
@@ -94,8 +94,10 @@ public class Citta{
         Pianeta pianeta = null;
         for(Pianeta p : s1.getListaPianeti()){
             for(Citta citta : p.getListaCitta()){
-                if(citta.getNomeCitta().equals(getNomeCitta()))
+                if (citta.getNomeCitta().equals(getNomeCitta())) {
                     pianeta = p;
+                    break;
+                }
             }
         }
         return pianeta;

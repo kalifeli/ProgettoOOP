@@ -3,7 +3,7 @@ package progetto;
 public class Collegamento {
     private Citta citta1;
     private Citta citta2;
-    private int tempo;
+    private final int tempo;
 
     public Collegamento(Citta citta1,Citta citta2, int tempo) {
         this.citta1 = citta1;
@@ -16,10 +16,6 @@ public class Collegamento {
         }
     public int getTempo() {
         return tempo;
-    }
-
-    public void setCitta1(Citta citta1) {
-        this.citta1 = citta1;
     }
 
     public void setCitta2(Citta citta2) {

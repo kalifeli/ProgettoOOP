@@ -5,7 +5,7 @@ import java.util.HashMap;
 
 public class Settore {
     private int deposito;
-    private ArrayList<Pianeta> listaPianeti;
+    private final ArrayList<Pianeta> listaPianeti;
 
     //Costruttore:
     public Settore(){
@@ -351,13 +351,12 @@ public class Settore {
                                 if(regalo.getTipoRegalo().equals("elettronica"))
                                     regaliElettronica[2] += 1;
                             }
-                            int n = regaliArte[0];
-                            for(int i = 0; i < 3; ++i){
-                                if(regaliArte[i] == n && regaliElettronica[i] == n)
-                                    valido = false;
-                                else
-                                    return true;
-                            }
+
+                            if(regaliArte[0] == regaliArte[1] && regaliArte[0] == regaliArte[2]){
+
+                                valido = regaliElettronica[0] != regaliElettronica[1] || regaliElettronica[0] != regaliElettronica[2];
+                            }else
+                                valido = true;
 
                         }
                     }
