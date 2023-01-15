@@ -375,22 +375,29 @@ public class Settore {
      */
     public boolean task2_4() {
         for (Pianeta p : getListaPianeti()) {
-            for (int i = 0; i < p.getListaCitta().size(); i++) {
-                for (int j = i + 1; j < p.getListaCitta().size(); j++){
+            int contatoreCoppieDiCittaStessoTipoRegalo = 0;
+            for (int i = 0; i < p.getNumeroCitta(); i++) {
+                for (int j = i + 1; j < p.getNumeroCitta(); j++) {
+                    int contatoreRegaliComuni = 0;
                     Citta citta1 = p.getListaCitta().get(i);
                     Citta citta2 = p.getListaCitta().get(j);
-                    for (Regalo regalo1 : citta1.getListaRegali()){
-                        for (Regalo regalo2 : citta2.getListaRegali()){
-                            if (regalo1.getTipoRegalo().equals(regalo2.getTipoRegalo())){
-                                return true;
+                    for (Regalo regalo1 : citta1.getListaRegali()) {
+                        for (Regalo regalo2 : citta2.getListaRegali()) {
+                            if (regalo1.getTipoRegalo().equals(regalo2.getTipoRegalo())) {
+                                contatoreRegaliComuni++;
                             }
-
                         }
+                    }
+                    if (contatoreRegaliComuni != 0) {
+                        contatoreCoppieDiCittaStessoTipoRegalo++;
                     }
                 }
             }
+            if (contatoreCoppieDiCittaStessoTipoRegalo != (p.getNumeroCitta()*(p.getNumeroCitta()-1))/2) {
+                return false;
+            }
         }
-        return false;
+        return true;
     }
 
 }
