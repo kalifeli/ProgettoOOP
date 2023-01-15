@@ -378,12 +378,12 @@ public class Settore {
         for (Pianeta p : getListaPianeti()) {
             for (int i = 0; i < p.getListaCitta().size(); i++) {
                 Citta citta1 = p.getListaCitta().get(i);
-                System.out.print(citta1.getNomeCitta() + " -> ");
+                //System.out.print(citta1.getNomeCitta() + " -> ");
                 for (int j = 0; j < p.getListaCitta().size(); j++){
                     Citta citta2 = p.getListaCitta().get(j);
                     if(citta1.equals(citta2))
                         continue;
-                    System.out.print(citta2.getNomeCitta() + " ");
+                    //System.out.print(citta2.getNomeCitta() + " ");
                     int contatore = 0;
                     for (Regalo regalo1 : citta1.getListaRegali()){
                         for (Regalo regalo2 : citta2.getListaRegali()){
@@ -392,13 +392,13 @@ public class Settore {
                             }
                         }
                     }
-                    System.out.print("( " + contatore + " )");
+                    //System.out.print("( " + contatore + " )");
                     if(contatore > 0){
                         valido = true;
                     }else
                         return false;
                 }
-                System.out.println();
+                //System.out.println();
             }
         }
         return valido;

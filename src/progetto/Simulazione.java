@@ -31,7 +31,7 @@ public class Simulazione {
                 }
             }
             deposito -= citta.getRegaliRichiesti();
-            System.out.println(deposito);
+            //System.out.println(deposito);
             citta.getListaRegali().clear();
             cittaVisitate.add(citta);
 
