@@ -374,23 +374,34 @@ public class Settore {
      * stesso tipo, altrimenti false.
      */
     public boolean task2_4() {
+        boolean valido = false;
         for (Pianeta p : getListaPianeti()) {
             for (int i = 0; i < p.getListaCitta().size(); i++) {
-                for (int j = i + 1; j < p.getListaCitta().size(); j++){
-                    Citta citta1 = p.getListaCitta().get(i);
+                Citta citta1 = p.getListaCitta().get(i);
+                System.out.print(citta1.getNomeCitta() + " -> ");
+                for (int j = 0; j < p.getListaCitta().size(); j++){
                     Citta citta2 = p.getListaCitta().get(j);
+                    if(citta1.equals(citta2))
+                        continue;
+                    System.out.print(citta2.getNomeCitta() + " ");
+                    int contatore = 0;
                     for (Regalo regalo1 : citta1.getListaRegali()){
                         for (Regalo regalo2 : citta2.getListaRegali()){
                             if (regalo1.getTipoRegalo().equals(regalo2.getTipoRegalo())){
-                                return true;
+                                contatore++;
                             }
-
                         }
                     }
+                    System.out.print("( " + contatore + " )");
+                    if(contatore > 0){
+                        valido = true;
+                    }else
+                        return false;
                 }
+                System.out.println();
             }
         }
-        return false;
+        return valido;
     }
 
 }
