@@ -13,32 +13,50 @@ public class Settore {
     private int deposito;
     private final ArrayList<Pianeta> listaPianeti;
 
-    //Costruttore:
+    /**
+     * Costruttore vuoto che inizializza il deposito del settore a 0.
+     */
     public Settore(){
         this.deposito = 0;
         this.listaPianeti = new ArrayList<>();
     }
 
+    /**
+     * Metodo modificatore del deposito di Babbo Natale.
+     * @param deposito un intero rappresentante il numero di regali sulla slitta di Babbo Natale
+     */
     public void setDeposito(int deposito) {
         this.deposito = deposito;
     }
 
+    /**
+     * Metodo che aggiunge un pianeta alla lista dei pianeti di un settore astrale.
+     * @param pianeta oggetto di tipo Pianeta da aggiungere nella lista dei pianeti
+     */
     public void addPianeta(Pianeta pianeta){listaPianeti.add(pianeta);}
-    //Metodi Getter e Setter;
 
+    /**
+     * Metodo di accesso alla variabile di esemplare deposito.
+     * @return un intero rappresentante i regali sulla slitta di Babbo Natale
+     */
     public int getDeposito(){
         return deposito;
     }
+
+    /**
+     * Metodo che fornisce l'accesso alla lista dei pianeti di un settore astrale.
+     * @return un ArrayList di tipo Pianeta contenente tutti i pianeti di un settore astrale
+     */
     public ArrayList<Pianeta> getListaPianeti(){
         return listaPianeti;
     }
 
     // TASK 1
     /**
-     * Task 1) 1.Itera ogni pianeta e ogni città accedendo alla variabile esemplare regaliTotali
+     * Task 1) 1.Itera ogni pianeta e ogni città accedendo alla variabile esemplare regaliTotali.
      * @return un intero rappresentante il numero dei regali totali
      */
-    protected int getRegaliTotali(){
+    public int getRegaliTotali(){
         int numeroRegaliTotali = 0;
         for (Pianeta pianeta : getListaPianeti()){
             for (Citta citta : pianeta.getListaCitta()){
@@ -49,7 +67,7 @@ public class Settore {
     }
 
     /**
-     * Task 1) 1.Metodo che utilizza un istanza di HashMap che calcola il numero di regali distinti utilizzando la size della HasMap.
+     * Task 1) 1.Metodo che utilizza un istanza di HashMap che calcola il numero di regali distinti utilizzando la size della HashMap.
      * @return un intero che indica il numero dei regali distinti
      */
     public int getRegaliDistinti(){
@@ -186,8 +204,8 @@ public class Settore {
                 {
                     maxRegali = regaliRichiesti;
                     cittaMostRegali = citta.getNomeCitta();
-                    nomiValidi.clear(); // pulire la mia lista di nomi validi visto che ho trovato una nuova citta con numero regali massimo
-                    nomiValidi.add(cittaMostRegali); // vado ad aggiungerla ai nomi candidati per essere la citta con più regali richiesti
+                    nomiValidi.clear();
+                    nomiValidi.add(cittaMostRegali);
                 }else if(regaliRichiesti == maxRegali){
                     nomiValidi.add(citta.getNomeCitta());
                 }
@@ -209,7 +227,7 @@ public class Settore {
     /**
      * Task 1) 6.Metodo che restituisce il nome della cittadina contenente più case.
      * @return una Stringa rappresentante il nome della prima cittadina con il numero maggiore di case in ordine lessico
-     * grafico crescente
+     * grafico crescente, altrimenti una stringa vuota
      */
     public String getCittadinaMostCase(){
         ArrayList<String> nomiValidi = new ArrayList<>();
@@ -240,7 +258,8 @@ public class Settore {
 
     /**
      * Task 1) 7.Metodo che restituisce il nome della citta con più collegamenti.
-     * @return una stringa rappresentante la prima citta che ha più collegamenti con altre città in ordine lessicografico crescente
+     * @return una stringa rappresentante la prima citta che ha più collegamenti con altre città in ordine lessicografico crescente,
+     * altrimenti una stringa vuota.
      */
 
     public String getCittaMostCollegamenti(){
@@ -274,8 +293,8 @@ public class Settore {
     //TASK 2
 
     /**
-     * Metodo booleano che restituisce TRUE se il numero totale di regali
-     * richiesti in ogni città è almeno p e al più q, altrimenti FALSE.
+     * Metodo booleano che restituisce true se il numero totale di regali
+     * richiesti in ogni città è almeno p e al più q, altrimenti false.
      * @param p minimo di regali richiesti in ogni citta
      * @param q massimo di regali richiesti in ogni citta
      * @return true se il numero dei regali richiesti in ogni città è almeno p e al più q, altrimenti false

@@ -1,13 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="eb53f33c-27c3-4b1f-a8a8-f6859cb93e02" name="Changes" comment="Versione completa del progetto">
+    <list default="true" id="eb53f33c-27c3-4b1f-a8a8-f6859cb93e02" name="Changes" comment="Versione completa del progetto con documentazione ancora incompleta">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/progetto/Citta.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/progetto/Citta.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/progetto/Collegamento.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/progetto/Collegamento.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/progetto/Pianeta.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/progetto/Pianeta.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/progetto/Progetto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/progetto/Progetto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/progetto/Regalo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/progetto/Regalo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/progetto/Settore.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/progetto/Settore.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/progetto/Simulazione.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/progetto/Simulazione.java" afterDir="false" />
     </list>
@@ -304,7 +300,14 @@
       <option name="project" value="LOCAL" />
       <updated>1673814131425</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="Versione completa del progetto con documentazione ancora incompleta">
+      <created>1673870274676</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1673870274676</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -336,7 +339,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Con questo push ho esclusivamente sostituito Arraylist al posto di List in tutti i punti del codice." />
     <MESSAGE value="Versione 1 progetto" />
     <MESSAGE value="Versione 1 progetto soggetta a problemi in vari metodi nella classe settore" />
     <MESSAGE value="modifica apportata al metodo &quot;addCollegamento&quot;, aggiunta di un metodo &quot;getCostoRegali&quot;, forse inutile" />
@@ -361,7 +363,8 @@
     <MESSAGE value="Manca da rettificare la task2_4, per il resto dovrebbe andare tutto bene." />
     <MESSAGE value="Versione completa del progetto, manca un chiarimento per controllo lessicografico su task1_2.&#10;Testare il progetto" />
     <MESSAGE value="Versione completa del progetto" />
-    <option name="LAST_COMMIT_MESSAGE" value="Versione completa del progetto" />
+    <MESSAGE value="Versione completa del progetto con documentazione ancora incompleta" />
+    <option name="LAST_COMMIT_MESSAGE" value="Versione completa del progetto con documentazione ancora incompleta" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

@@ -12,7 +12,7 @@ import java.util.HashMap;
 public class Simulazione {
     private ArrayList<Citta> cittaVisitate;
     private HashMap<String, Pianeta> pianetiVisitati;
-    private int deposito; // quanti regali babbo Natale ha sulla slitta
+    private int deposito;
 
     /**
      * Una simulazione ha una lista di città visitate che tiene traccia delle città in cui Babbo Natale ha consegnato

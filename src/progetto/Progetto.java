@@ -3,12 +3,17 @@ package progetto;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+/**
+ * La classe progetto presenta un main nel quale è presente la lettura dallo stdin tramite l'utilizzo della classe Scanner.
+ * @author Alessandro Feliziani
+ * @author Luca Severini
+ */
 public class Progetto {
     public static void main(String[] args) {
 
         Scanner scanner = new Scanner(System.in);
 
-        Settore s1 = new Settore(); // genera una lista di pianeti
+        Settore s1 = new Settore();
 
         String temp = scanner.nextLine();
         String[] campi = temp.split(" ");
