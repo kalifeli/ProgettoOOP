@@ -22,10 +22,10 @@ public class Progetto {
         {
             temp = scanner.nextLine();
             campi = temp.split(" ");
-            Regalo regaloTemp = new Regalo(campi[0],Double.parseDouble(campi[1]),campi[2]);
+            Regalo regaloTemp = new Regalo(campi[0],Integer.parseInt(campi[1]),campi[2]);
             listaRegali.add(regaloTemp);
         }
-        // istanzio oggetti di tipo Pianeta con i dati letti in input dal file e li aggiungo nella lista dei pianeti del settore 1
+        // istanzio oggetti di tipo Pianeta con i dati letti in input e li aggiungo nella lista dei pianeti del settore 1
         int numeroCittaTotali = 0;
         for(int i = 0; i < numeroPianeti; ++i)
         {
@@ -37,7 +37,7 @@ public class Progetto {
         }
 
 
-        // istanzio le citta e aggiungerle nei rispettivi pianeti di appartenenza
+        // istanzio le citta e le aggiungo nei rispettivi pianeti di appartenenza
         for(int i = 0; i < numeroCittaTotali; ++i)
         {
             temp = scanner.nextLine();
@@ -51,7 +51,7 @@ public class Progetto {
                 //su tutti i campi di collegamenti
                 for (String s : collegamenti) {
                     //creo un aray di String che mi rappresenti nel campo[0] == citta2, campo[1] == costo
-                    // datiCollegamenti viene ad ogni iterazione del ciclo for
+                    // datiCollegamenti viene inizializzato ad ogni iterazione del ciclo for
                     String[] datiCollegamenti = s.split("#");
                     Citta cittaDest = new Citta(datiCollegamenti[0]);
                     // istanzio un collegamento temporaneo che mi permette di tener traccia ogni volta dei collegamenti che creo
@@ -108,19 +108,19 @@ public class Progetto {
                 }
             }
         }
-
+        // leggo qui la riga rappresentante il task da eseguire
         temp = scanner.nextLine();
         campi = temp.split(" ");
 
         switch(campi[0]){
             case "TASK1":
-                System.out.println(s1.getRegaliTotali() + " " + s1.getRegaliDistinti()); // 12 4
-                s1.task1_2(); // 5 4 3
-                System.out.println(s1.getPianetaMostRegali()); // p1
-                System.out.println(s1.getPianetaMostCosto()); // p1
-                System.out.println(s1.getCittaMostRegali());// c1
+                System.out.println(s1.getRegaliTotali() + " " + s1.getRegaliDistinti());
+                s1.task1_2();
+                System.out.println(s1.getPianetaMostRegali());
+                System.out.println(s1.getPianetaMostCosto());
+                System.out.println(s1.getCittaMostRegali());
                 System.out.println(s1.getCittadinaMostCase());
-                System.out.println(s1.getCittaMostCollegamenti());// c2
+                System.out.println(s1.getCittaMostCollegamenti());
                 break;
             case "TASK2":
                 int p = Integer.parseInt(campi[1]);
@@ -133,7 +133,9 @@ public class Progetto {
             case "TASK3":
                 Simulazione simulazione = new Simulazione(s1);
                 int numeroCittaDaVisitare = Integer.parseInt(campi[1]);
+                // istanzio un ArrayList di Citta che rappresentano le destinazioni di Babbo Natale
                 ArrayList<Citta> pianoDiConsegna = new ArrayList<>();
+                // leggo da stdin le città che Babbo Natale dovrà visitare e le aggiungo nel pianoDiConsegna
                 for(int i = 0; i < numeroCittaDaVisitare;++i){
                     temp = scanner.nextLine();
                     for(Pianeta pianeta: s1.getListaPianeti()){
@@ -145,8 +147,8 @@ public class Progetto {
                         }
                     }
                 }
-                // vedo se ci sono doppioni di citta all'interno del piano di consegna e se BAbbo Natale visita tutte le citta
-                for(Pianeta pianeta : s1.getListaPianeti()){ // p1 -> c1 c2 c3 c4  p2 -> c5 piano consegna -> c1 c2 c5 c4 c3
+                // vedo se ci sono doppioni di citta all'interno del piano di consegna e se Babbo Natale visita tutte le citta
+                for(Pianeta pianeta : s1.getListaPianeti()){
                     for(Citta citta : pianeta.getListaCitta()){
                         int contatore = 0;
                         for(int i = 0; i < numeroCittaDaVisitare; ++i){
@@ -160,6 +162,7 @@ public class Progetto {
                         }
                     }
                 }
+                // se il controllo è superato, simulo la consegna.
                 simulazione.simula(pianoDiConsegna,s1);
 
         }

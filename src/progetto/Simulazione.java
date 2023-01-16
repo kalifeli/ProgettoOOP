@@ -3,10 +3,22 @@ package progetto;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+/**
+ * Simulazione di consegna dei regali di Babbo Natale, formata da una sequenza ordinata di visite a diverse città.
+ * Ad ogni visita, Babbo Natale consegna i regali richiesti, detraendoli dal suo deposito.
+ * @author Alessandro Feliziani
+ * @author Luca Severini
+ */
 public class Simulazione {
     private ArrayList<Citta> cittaVisitate;
     private HashMap<String, Pianeta> pianetiVisitati;
     private int deposito; // quanti regali babbo Natale ha sulla slitta
+
+    /**
+     * Una simulazione ha una lista di città visitate che tiene traccia delle città in cui Babbo Natale ha consegnato
+     * i regali richiesti e da mappa di pianeti visitati.
+     * @param s1 settore in cui Babbo Natale viaggia con la sua slitta intergalattica
+     */
     public Simulazione(Settore s1){
         this.cittaVisitate = new ArrayList<>();
         this.pianetiVisitati = new HashMap<>();
@@ -15,6 +27,13 @@ public class Simulazione {
         }
         this.deposito = s1.getDeposito();
     }
+
+    /**
+     * Metodo che simula la consegna dei regali da parte di Babbo Natale, assicurando che visiti tutti i pianeti e consegni
+     * i regali richiesti ad ogni città.
+     * @param pianoDiConsegna ArrayList di tipo Citta che rappresenta le città in cui Babbo Natale deve fare scalo
+     * @param s1 Settore in cui Babbo Natale viaggia con la sua slitta intergalattica
+     */
     public void simula(ArrayList<Citta> pianoDiConsegna,Settore s1){
         Citta cittaPrecedente = null;
         Pianeta pianetaPrecedente = null;

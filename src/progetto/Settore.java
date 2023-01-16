@@ -3,6 +3,12 @@ package progetto;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+/**
+ * Rappresenta il settore Astrale in cui il nostro Babbo Natale Intergalattico viaggia nel tentativo disperato di consegnare
+ * tutti i regali.
+ * @author Alessandro Feliziani
+ * @author Luca Severini
+ */
 public class Settore {
     private int deposito;
     private final ArrayList<Pianeta> listaPianeti;
@@ -26,13 +32,13 @@ public class Settore {
     public ArrayList<Pianeta> getListaPianeti(){
         return listaPianeti;
     }
-    // TASK 1
 
+    // TASK 1
     /**
      * Task 1) 1.Itera ogni pianeta e ogni città accedendo alla variabile esemplare regaliTotali
      * @return un intero rappresentante il numero dei regali totali
      */
-    public int getRegaliTotali(){
+    protected int getRegaliTotali(){
         int numeroRegaliTotali = 0;
         for (Pianeta pianeta : getListaPianeti()){
             for (Citta citta : pianeta.getListaCitta()){
@@ -43,7 +49,7 @@ public class Settore {
     }
 
     /**
-     * Task 1) 1.Metodo che utilizza un istanza di HashMap che calcola il numero di regali distinti utilizzando semplicemente la size della HasMap
+     * Task 1) 1.Metodo che utilizza un istanza di HashMap che calcola il numero di regali distinti utilizzando la size della HasMap.
      * @return un intero che indica il numero dei regali distinti
      */
     public int getRegaliDistinti(){
@@ -60,7 +66,7 @@ public class Settore {
     }
 
     /**
-     * Task 1) 2. Metodo che stampa il numero dei regali, di un settore, di ogni tipologia
+     * Task 1) 2. Metodo che stampa il numero dei regali, di un settore, di ogni tipologia.
      */
     public void task1_2(){
         int regaliArte = 0;
@@ -84,8 +90,9 @@ public class Settore {
 
 
     /**
-     * Task 1) 3.Metodo che trova il nome del pianeta col numero massimo di regali richiesti
-     * @return nome del pianeta con il numero maggiore di regali richiesti
+     * Task 1) 3.Metodo che trova il nome del pianeta col numero massimo di regali richiesti.
+     * @return il primo nome del pianeta con il numero maggiore di regali richiesti in ordine lessicografico crescente,
+     * altrimenti una stringa vuota
      */
     public String getPianetaMostRegali(){
         // una lista in cui introduco nomi di pianeta che hanno lo stesso numero di regali massimi
@@ -121,17 +128,19 @@ public class Settore {
         return "";
     }
     /**
-     * Task 1) 4.Metodo che restituisce il nome del pianeta che presenta costo maggiore di regali richiesti
+     * Task 1) 4.Metodo che restituisce il nome del pianeta che presenta costo maggiore di regali richiesti.
+     * @return il nome del primo pianeta con il costo maggiore di regali richiesti in ordine lessicografico crescente,
+     * altrimenti una stringa vuota
      */
     public String getPianetaMostCosto() {
         ArrayList<String> nomiValidi = new ArrayList<>();
         String pianetaMostCosto;
         // inizializzo la variabile che conterrà il costo massimo dei regali richiesti in un pianeta
-        double costoMax = 0;
+        int costoMax = 0;
 
         for(Pianeta pianeta : getListaPianeti())
         {  // calcolo costoMax di ogni pianeta
-            double costo = 0;
+            int costo = 0;
             for(Citta citta : pianeta.getListaCitta())
             {
                 for(Regalo regalo : citta.getListaRegali())
@@ -162,8 +171,9 @@ public class Settore {
     }
 
     /**
-     * Task 1) 5.Metodo che restituisce il nome della città col numero massimo di regali richiesti
-     * @return Stringa rappresentante al citta con il numero maggiore di regali richiesti
+     * Task 1) 5.Metodo che restituisce il nome della città col numero massimo di regali richiesti.
+     * @return Stringa rappresentante la prima citta con il numero maggiore di regali richiesti in ordine lessicografico
+     * crescente, altrimenti una stringa nulla
      */
     public String getCittaMostRegali(){
         ArrayList<String> nomiValidi = new ArrayList<>();
@@ -197,8 +207,9 @@ public class Settore {
     }
 
     /**
-     * Task 1) 6.Metodo che restituisce il nome della cittadina contenente più case
-     * @return una Stringa rappresentante il nome della cittadina con il numero maggiore di case
+     * Task 1) 6.Metodo che restituisce il nome della cittadina contenente più case.
+     * @return una Stringa rappresentante il nome della prima cittadina con il numero maggiore di case in ordine lessico
+     * grafico crescente
      */
     public String getCittadinaMostCase(){
         ArrayList<String> nomiValidi = new ArrayList<>();
@@ -228,8 +239,8 @@ public class Settore {
     }
 
     /**
-     * Metodo che restituisce il nome della citta con più collegamenti
-     * @return citta che ha più collegamenti con altre città
+     * Task 1) 7.Metodo che restituisce il nome della citta con più collegamenti.
+     * @return una stringa rappresentante la prima citta che ha più collegamenti con altre città in ordine lessicografico crescente
      */
 
     public String getCittaMostCollegamenti(){
@@ -259,11 +270,12 @@ public class Settore {
         }
         return "";
     }
+
     //TASK 2
 
     /**
      * Metodo booleano che restituisce TRUE se il numero totale di regali
-     * richiesti in ogni città è almeno p e al più q, altrimenti FALSE
+     * richiesti in ogni città è almeno p e al più q, altrimenti FALSE.
      * @param p minimo di regali richiesti in ogni citta
      * @param q massimo di regali richiesti in ogni citta
      * @return true se il numero dei regali richiesti in ogni città è almeno p e al più q, altrimenti false
@@ -286,17 +298,16 @@ public class Settore {
     }
     /**
      * Calcola il costo massimo dei collegamenti di una città in ogni pianeta verificando, tramite un contatore, se il
-     * il costo massimo di collegamenti è uguale anche a quello di altre città nel pianeta
+     * il costo massimo di collegamenti è uguale anche a quello di altre città nel pianeta.
      * @return true se vi è una sola città la cui somma del costo dei suoi collegamenti è il massimo
      * in quel pianeta, altrimenti false
      */
 
     public boolean task2_2(){
         for(Pianeta pianeta : getListaPianeti()) {
-            double costoMax = 0;
+            int costoMax = 0;
             for (Citta citta : pianeta.getListaCitta()) {
-                double costo = 0;
-                costo += citta.getCostoCollegamentiCitta();
+                int costo = citta.getCostoCollegamentiCitta();
                 if(costo > costoMax)
                     costoMax = costo;
             }
@@ -315,7 +326,7 @@ public class Settore {
 
     /**
      * Metodo che torna true se per ogni pianeta, non vi sono tre città collegate tra loro in cui sono stati richiesti lo stesso
-     * numero di regali di tipo arte ed elettronica
+     * numero di regali di tipo arte ed elettronica.
      * @return true se per ogni pianeta, non vi sono tre città collegate tra loro in cui sono stati richiesti lo stesso
      * numero di regali di tipo arte ed elettronica
      */
@@ -369,9 +380,9 @@ public class Settore {
 
     /**
      * Metodo booleano che restituisce true se per ogni pianeta non vi sono due città in cui non è stato richiesto almeno un regalo dello
-     * stesso tipo
+     * stesso tipo.
      * @return true se per ogni pianeta non vi sono due città in cui non è stato richiesto almeno un regalo dello
-     * stesso tipo, altrimenti false.
+     * stesso tipo, altrimenti false
      */
     public boolean task2_4() {
         boolean valido = false;
